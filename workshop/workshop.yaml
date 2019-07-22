@@ -1,0 +1,7 @@
+name: Build an Operator
+
+modules:
+    activate:
+    - workshop-overview
+    - test-environment
+    - workshop-summary

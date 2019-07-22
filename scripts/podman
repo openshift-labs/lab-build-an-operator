@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [[ $EUID -ne 0 ]]; then
+    exec sudo /usr/bin/podman "$@"
+else
+    exec /usr/bin/podman "$@"
+fi

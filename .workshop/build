@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -x
+
+set -eo pipefail
+
+# Move workshop directory out of the way.
+
+mv workshop /opt/app-root/workshop
+
+# Install additional executable scripts.
+
+mv scripts/* /opt/app-root/bin/
+
+# Delete all non required files from the image
+
+rm -rf Dockerfile README.md LICENSE
+
+rm -rf scripts sudoers.d

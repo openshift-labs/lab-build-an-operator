@@ -1,0 +1,34 @@
+apiVersion: template.openshift.io/v1
+kind: Template
+metadata:
+  name: clusterroles-spawner-rules
+parameters:
+- name: SPAWNER_NAMESPACE
+  value: ""
+  required: true
+- name: SPAWNER_APPLICATION
+  value: ""
+  required: true
+objects:
+- apiVersion: authorization.openshift.io/v1
+  kind: ClusterRole
+  metadata:
+    labels:
+      app: ${SPAWNER_APPLICATION}-${SPAWNER_NAMESPACE}
+      spawner: learning-portal
+    name: ${SPAWNER_APPLICATION}-${SPAWNER_NAMESPACE}-spawner-rules
+  rules:
+  - apiGroups:
+    - ""
+    - security.openshift.io
+    resources:
+    - securitycontextconstraints
+    verbs:
+    - create
+    - delete
+    - deletecollection
+    - get
+    - list
+    - patch
+    - update
+    - watch

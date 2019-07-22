@@ -1,0 +1,68 @@
+apiVersion: template.openshift.io/v1
+kind: Template
+metadata:
+  name: clusterroles-session-rules
+parameters:
+- name: SPAWNER_NAMESPACE
+  value: ""
+  required: true
+- name: SPAWNER_APPLICATION
+  value: ""
+  required: true
+objects:
+- apiVersion: authorization.openshift.io/v1
+  kind: ClusterRole
+  metadata:
+    labels:
+      app: ${SPAWNER_APPLICATION}-${SPAWNER_NAMESPACE}
+      spawner: learning-portal
+    name: ${SPAWNER_APPLICATION}-${SPAWNER_NAMESPACE}-session-rules
+  rules:
+  - apiGroups:
+    - "apiextensions.k8s.io"
+    resources:
+    - customresourcedefinitions
+    verbs:
+    - create
+  - apiGroups:
+    - "apiextensions.k8s.io"
+    resources:
+    - customresourcedefinitions
+    resourceNames:
+    - ${PROJECT_NAMESPACE}-pizzastands
+    verbs:
+    - get
+    - list
+    - watch
+    - delete
+    - patch
+    - update
+  - apiGroups:
+    - "kafka.strimzi.io"
+    resources:
+    - kafkas
+    - kafkaconnects
+    - kafkaconnects2is
+    - kafkamirrormakers
+    - kafkausers
+    - kafkatopics
+    verbs:
+    - get
+    - list
+    - watch
+    - create
+    - delete
+    - patch
+    - update
+  - apiGroups:
+    - "workshop.openshift.dev"
+    resources:
+    - ${PROJECT_NAMESPACE}-pizzastands
+    verbs:
+    - get
+    - list
+    - watch
+    - create
+    - delete
+    - patch
+    - update

@@ -1,0 +1,10 @@
+modules:
+
+    workshop-overview:
+        name: Workshop Overview
+        exit_sign: Start Workshop
+    test-environment:
+        name: Test Environment
+    workshop-summary:
+        name: Workshop Summary
+        exit_sign: Finish Workshop

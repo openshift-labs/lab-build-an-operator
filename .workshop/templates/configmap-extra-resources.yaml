@@ -1,0 +1,73 @@
+apiVersion: template.openshift.io/v1
+kind: Template
+metadata:
+  name: configmap-extra-resources
+parameters:
+- name: SPAWNER_NAMESPACE
+  value: ""
+  required: true
+- name: SPAWNER_APPLICATION
+  value: ""
+  required: true
+objects:
+- apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: ${SPAWNER_APPLICATION}-res
+    namespace: ${SPAWNER_NAMESPACE}
+    labels:
+      app: ${SPAWNER_APPLICATION}-${SPAWNER_NAMESPACE}
+      spawner: learning-portal
+  data:
+    extra_resources.json: |-
+      {
+        "kind": "List",
+        "apiVersion": "v1",
+        "items": [
+          {
+            "kind": "SecurityContextConstraints",
+            "apiVersion": "security.openshift.io/v1",
+            "metadata": {
+              "name": "${project_namespace}-containers",
+              "labels": {
+                "app": "${SPAWNER_APPLICATION}-${SPAWNER_NAMESPACE}",
+                "project": "${project_namespace}"
+              }
+            },
+            "priority": 888,
+            "runAsUser": {
+              "type": "MustRunAsRange"
+            },
+            "seLinuxContext": {
+              "type": "MustRunAs"
+            },
+            "fsGroup": {
+              "type": "MustRunAs"
+            },
+            "requiredDropCapabilities": [
+              "KILL",
+              "MKNOD"
+            ],
+            "allowHostDirVolumePlugin": false,
+            "allowHostIPC": false,
+            "allowHostNetwork": false,
+            "allowHostPID": false,
+            "allowHostPorts": false,
+            "allowPrivilegeEscalation": true,
+            "allowPrivilegedContainer": true,
+            "allowedCapabilities": null,
+            "defaultAddCapabilities": null,
+            "users": [
+              "system:serviceaccount:${SPAWNER_NAMESPACE}:${project_namespace}"
+            ],
+            "volumes": [
+              "configMap",
+              "downwardAPI",
+              "emptyDir",
+              "persistentVolumeClaim",
+              "projected",
+              "secret"
+            ]
+          }
+        ]
+      }
