@@ -12,12 +12,6 @@ Can we create a Kafka cluster.
 oc auth can-i create kafkas
 ```
 
-Can we deploy a Pizza Stand application.
-
-```execute
-oc auth can-i create %project_namespace%-pizzastands
-```
-
 Now let's check that `podman` works.
 
 Pull down the `busybox` image:
@@ -113,19 +107,19 @@ exit
 Lets tag this image:
 
 ```execute
-podman tag tests docker-registry.default.svc:5000/%project_namespace%/tests:latest
+podman tag tests image-registry.openshift-image-registry.svc:5000/%project_namespace%/tests:latest
 ```
 
 Login to the OpenShift internal registry:
 
 ```execute
-podman login -u default -p `oc whoami -t` docker-registry.default.svc:5000
+podman login -u default -p `oc whoami -t` image-registry.openshift-image-registry.svc:5000 --tls-verify=false
 ```
 
 Push the image to the registry:
 
 ```execute
-podman push docker-registry.default.svc:5000/%project_namespace%/tests:latest
+podman push image-registry.openshift-image-registry.svc:5000/%project_namespace%/tests:latest --tls-verify=false
 ```
 
 Verify the image is uploaded:
@@ -145,3 +139,86 @@ Watch it being deployed:
 ```execute
 oc rollout status dc/tests
 ```
+
+Change back to the top level directory.
+
+```execute
+cd
+```
+
+Now lets try the operator SDK.
+
+```execute
+operator-sdk new pizzastand-operator
+```
+
+Change to the directory of the generated files.
+
+```execute
+cd pizzastand-operator
+```
+
+Add a new API for the custom resource `PizzaStand`
+
+```execute
+operator-sdk add api --api-version=workshops.openshift.dev/v1 --kind=PizzaStand
+```
+
+Add a new controller that watches for `PizzaStand`.
+
+```execute
+operator-sdk add controller --api-version=workshops.openshift.dev/v1 --kind=PizzaStand
+```
+
+Build the operator image.
+
+First run this magic command else things don't work.
+
+```execute
+go mod vendor
+```
+
+Then do the build.
+
+```execute
+operator-sdk build image-registry.openshift-image-registry.svc:5000/%project_namespace%/pizzastand-operator
+```
+
+Push the image to the internal OpenShift image registry.
+
+```execute
+podman push image-registry.openshift-image-registry.svc:5000/%project_namespace%/pizzastand-operator --tls-verify=false
+```
+
+---
+
+Done for now. Still need to convert the rest.
+
+---
+
+# Update the operator manifest to use the built image name (if you are performing these steps on OSX, see note below)
+$ sed -i 's|REPLACE_IMAGE|quay.io/example/app-operator|g' deploy/operator.yaml
+# On OSX use:
+$ sed -i "" 's|REPLACE_IMAGE|quay.io/example/app-operator|g' deploy/operator.yaml
+
+# Setup Service Account
+$ kubectl create -f deploy/service_account.yaml
+# Setup RBAC
+$ kubectl create -f deploy/role.yaml
+$ kubectl create -f deploy/role_binding.yaml
+# Setup the CRD
+$ kubectl create -f deploy/crds/app_v1alpha1_appservice_crd.yaml
+# Deploy the app-operator
+$ kubectl create -f deploy/operator.yaml
+
+# Create an AppService CR
+# The default controller will watch for AppService objects and create a pod for each CR
+$ kubectl create -f deploy/crds/app_v1alpha1_appservice_cr.yaml
+
+# Verify that a pod is created
+$ kubectl get pod -l app=example-appservice
+NAME                     READY     STATUS    RESTARTS   AGE
+example-appservice-pod   1/1       Running   0          1m
+
+# Test the new Resource Type
+$ kubectl describe appservice example-appservice

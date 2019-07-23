@@ -8,12 +8,51 @@ set -eo pipefail
 
 mv workshop /opt/app-root/workshop
 
-# Install additional executable scripts.
+# Install additional executable scripts and profiles.
 
 mv scripts/* /opt/app-root/bin/
+
+mv profiles/* /opt/app-root/etc/profile.d/
+
+# Download Operator SDK command line client.
+
+SDK_RELEASE_VERSION=v0.8.2
+
+curl -sL -o /opt/app-root/bin/operator-sdk https://github.com/operator-framework/operator-sdk/releases/download/${SDK_RELEASE_VERSION}/operator-sdk-${SDK_RELEASE_VERSION}-x86_64-linux-gnu
+
+chmod +x /opt/app-root/bin/operator-sdk
+
+# Download and install Golang.
+
+GO_RELEASE_VERSION=1.12.7
+
+curl -sOL https://dl.google.com/go/go${GO_RELEASE_VERSION}.linux-amd64.tar.gz
+
+tar -C /opt/app-root -xf go${GO_RELEASE_VERSION}.linux-amd64.tar.gz
+
+rm go${GO_RELEASE_VERSION}.linux-amd64.tar.gz
 
 # Delete all non required files from the image
 
 rm -rf Dockerfile README.md LICENSE
 
-rm -rf scripts sudoers.d
+rm -rf scripts sudoers.d profiles
+
+# If the workshop requires Git, it is necessary to set some defaults for
+# the name and email of the user for Git.
+
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+# Create sample operator to force download of Go packages.
+
+export GOPATH=/opt/app-root
+export GOROOT=/opt/app-root/go
+
+export PATH=$PATH:$GOROOT/bin
+
+operator-sdk new sample-operator && rm -rf sample-operator
+
+# Create fake symlink from docker to podman so SDK builds work.
+
+ln -s /opt/app-root/bin/podman /opt/app-root/bin/docker
