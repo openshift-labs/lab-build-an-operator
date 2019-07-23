@@ -1,21 +1,9 @@
 To get started let's check that have required roles.
 
-Can we create custom resource definitions.
+Can we create custom `pizzastands`.
 
 ```execute
-oc auth can-i create customresourcedefinitions
-```
-
-Can we delete our custom resource definitions.
-
-```execute
-oc auth can-i delete customresourcedefinitions/%project_namespace%-pizzastands
-```
-
-Can we delete other custom resource definitions.
-
-```execute
-oc auth can-i delete customresourcedefinitions
+oc auth can-i create pizzastands
 ```
 
 Can we create a Kafka cluster.

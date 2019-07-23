@@ -10,6 +10,8 @@ WORKSHOP_NAME=lab-build-an-operator
 SPAWNER_APPLICATION=${SPAWNER_APPLICATION:-$WORKSHOP_NAME}
 SPAWNER_NAMESPACE=`oc project --short 2>/dev/null`
 
+CONSOLE_VERSION=4.1.0
+
 WORKSHOP_IMAGE="quay.io/openshiftlabs/workshop-dashboard:3.6.0"
 
 RESOURCE_BUDGET="medium"
@@ -41,6 +43,7 @@ oc process -f $TEMPLATE_PATH \
     --param GATEWAY_ENVVARS="$GATEWAY_ENVVARS" \
     --param TERMINAL_ENVVARS="$TERMINAL_ENVVARS" \
     --param WORKSHOP_ENVVARS="$WORKSHOP_ENVVARS" \
+    --param CONSOLE_VERSION="$CONSOLE_VERSION" \
     --param JUPYTERHUB_CONFIG="$JUPYTERHUB_CONFIG" \
     --param LETS_ENCRYPT="$LETS_ENCRYPT" | oc apply -f -
 
@@ -66,11 +69,11 @@ echo
 
 if [ -d .workshop/resources/ ]; then
     oc apply -f .workshop/resources/ --recursive
-fi
 
-if [ "$?" != "0" ]; then
-    fail "Error: Failed to create global definitions."
-    exit 1
+    if [ "$?" != "0" ]; then
+        fail "Error: Failed to create global definitions."
+        exit 1
+    fi
 fi
 
 echo
@@ -81,33 +84,33 @@ if [ -f .workshop/templates/clusterroles-session-rules.yaml ]; then
     oc process -f .workshop/templates/clusterroles-session-rules.yaml \
         --param SPAWNER_APPLICATION="$SPAWNER_APPLICATION" \
         --param SPAWNER_NAMESPACE="$SPAWNER_NAMESPACE" | oc apply -f -
-fi
 
-if [ "$?" != "0" ]; then
-    fail "Error: Failed to udpate spawner configuration for workshop."
-    exit 1
+    if [ "$?" != "0" ]; then
+        fail "Error: Failed to udpate spawner configuration for workshop."
+        exit 1
+    fi
 fi
 
 if [ -f .workshop/templates/clusterroles-spawner-rules.yaml ]; then
     oc process -f .workshop/templates/clusterroles-spawner-rules.yaml \
         --param SPAWNER_APPLICATION="$SPAWNER_APPLICATION" \
         --param SPAWNER_NAMESPACE="$SPAWNER_NAMESPACE" | oc apply -f -
-fi
 
-if [ "$?" != "0" ]; then
-    fail "Error: Failed to udpate spawner configuration for workshop."
-    exit 1
+    if [ "$?" != "0" ]; then
+        fail "Error: Failed to udpate spawner configuration for workshop."
+        exit 1
+    fi
 fi
 
 if [ -f .workshop/templates/configmap-extra-resources.yaml ]; then
     oc process -f .workshop/templates/configmap-extra-resources.yaml \
         --param SPAWNER_APPLICATION="$SPAWNER_APPLICATION" \
         --param SPAWNER_NAMESPACE="$SPAWNER_NAMESPACE" | oc apply -f -
-fi
 
-if [ "$?" != "0" ]; then
-    fail "Error: Failed to udpate spawner configuration for workshop."
-    exit 1
+    if [ "$?" != "0" ]; then
+        fail "Error: Failed to udpate spawner configuration for workshop."
+        exit 1
+    fi
 fi
 
 echo
