@@ -113,13 +113,13 @@ podman tag tests image-registry.openshift-image-registry.svc:5000/%project_names
 Login to the OpenShift internal registry:
 
 ```execute
-podman login -u default -p `oc whoami -t` image-registry.openshift-image-registry.svc:5000 --tls-verify=false
+podman login -u default -p `oc whoami -t` %image_registry%
 ```
 
 Push the image to the registry:
 
 ```execute
-podman push image-registry.openshift-image-registry.svc:5000/%project_namespace%/tests:latest --tls-verify=false
+podman push %image_registry%/%project_namespace%/tests:latest
 ```
 
 Verify the image is uploaded:
@@ -181,13 +181,13 @@ go mod vendor
 Then do the build.
 
 ```execute
-operator-sdk build image-registry.openshift-image-registry.svc:5000/%project_namespace%/pizzastand-operator
+operator-sdk build %image_registry%/%project_namespace%/pizzastand-operator
 ```
 
 Push the image to the internal OpenShift image registry.
 
 ```execute
-podman push image-registry.openshift-image-registry.svc:5000/%project_namespace%/pizzastand-operator --tls-verify=false
+podman push %image_registry%/%project_namespace%/pizzastand-operator
 ```
 
 ---
