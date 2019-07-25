@@ -30,7 +30,7 @@ objects:
             "metadata": {
               "name": "${project_namespace}-containers",
               "labels": {
-                "app": "${SPAWNER_APPLICATION}-${SPAWNER_NAMESPACE}",
+                "app": "${application_name}-${spawner_namespace}",
                 "project": "${project_namespace}"
               }
             },
@@ -58,7 +58,7 @@ objects:
             "allowedCapabilities": null,
             "defaultAddCapabilities": null,
             "users": [
-              "system:serviceaccount:${SPAWNER_NAMESPACE}:${project_namespace}"
+              "system:serviceaccount:${spawner_namespace}:${service_account}"
             ],
             "volumes": [
               "configMap",
