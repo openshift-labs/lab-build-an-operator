@@ -12,7 +12,7 @@ SPAWNER_NAMESPACE=`oc project --short 2>/dev/null`
 
 CONSOLE_VERSION=4.1.0
 
-WORKSHOP_IMAGE="quay.io/openshiftlabs/workshop-dashboard:3.6.0"
+WORKSHOP_IMAGE="quay.io/openshiftlabs/workshop-dashboard:3.6.2"
 
 RESOURCE_BUDGET="medium"
 LETS_ENCRYPT=${LETS_ENCRYPT:-false}
