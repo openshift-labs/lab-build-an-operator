@@ -1,0 +1,9 @@
+WORKSHOP_NAME=lab-build-an-operator
+
+RESOURCE_BUDGET=medium
+MAX_SESSION_AGE=14400
+IDLE_TIMEOUT=1800
+
+JUPYTERHUB_CONFIG="
+c.KubeSpawner.privileged = True
+"
