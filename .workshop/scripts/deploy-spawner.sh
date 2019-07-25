@@ -18,7 +18,7 @@ RESOURCE_BUDGET="medium"
 LETS_ENCRYPT=${LETS_ENCRYPT:-false}
 
 TEMPLATE_REPO=https://raw.githubusercontent.com/openshift-labs/workshop-spawner
-TEMPLATE_VERSION=4.2.0
+TEMPLATE_VERSION=4.3.0
 TEMPLATE_FILE=learning-portal-production.json
 TEMPLATE_PATH=$TEMPLATE_REPO/$TEMPLATE_VERSION/templates/$TEMPLATE_FILE
 
