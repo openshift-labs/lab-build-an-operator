@@ -1,0 +1,1 @@
+c.KubeSpawner.privileged = True
