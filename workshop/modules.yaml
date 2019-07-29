@@ -2,11 +2,12 @@ modules:
 
     workshop-overview:
         name: Workshop Overview
-        exit_sign: Start Workshop
+        exit_sign: Verify Environment
     test-environment:
         name: Test Environment
     verify-environment:
         name: Verify Environment
+        exit_sign: Start Workshop
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop
