@@ -8,6 +8,8 @@ modules:
     verify-environment:
         name: Verify Environment
         exit_sign: Start Workshop
+    creating-an-etcd-cluster/01-listing-installed-operators:
+        name: Listing Installed Operators
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

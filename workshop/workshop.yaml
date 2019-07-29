@@ -5,4 +5,5 @@ modules:
     - workshop-overview
     # - test-environment
     - verify-environment
+    - creating-an-etcd-cluster/01-listing-installed-operators
     - workshop-summary

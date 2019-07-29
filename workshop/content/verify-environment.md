@@ -14,6 +14,8 @@ You may also see other icons used. The <span class="fas fa-copy"></span> icon wi
 
 Where you see the <span class="fas fa-user-edit"></span> icon, clicking on the text will again automatically copy it to your copy and paste buffer. In this case, the different icon indicates that when you paste it to the required window, that you will need to then edit details of the text before using it.
 
+Embedded links can also be annotated with the <span class="fas fa-window-restore"></span> icon. This is used on links which when clicked on, will bring the "Terminal" tab, or "Console" tab to the front if necessary, and take you to a specific view within the web console, without the need for you to navigate there yourself.
+
 Having run `oc project`, you should see the message:
 
 ```
