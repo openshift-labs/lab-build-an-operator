@@ -14,13 +14,13 @@ You may also see other icons used. The <span class="fas fa-copy"></span> icon wi
 
 Where you see the <span class="fas fa-user-edit"></span> icon, clicking on the text will again automatically copy it to your copy and paster buffer. In this case, the different icon indicates that when you paste it to the required window, that you will need to then edit details of the text before using it.
 
-Having run `oc project`, you should see a message similar to:
+Having run `oc project`, you should see the message:
 
 ```
-Using project "%project_namespace%" on server "https://...".
+Using project "%project_namespace%" on server "%kubernetes_url%".
 ```
 
-You should see that the current project is `%project_namespace%`.
+The project you will be working in will thus be `%project_namespace%`.
 
 To check that you can deploy applications, run the command:
 
