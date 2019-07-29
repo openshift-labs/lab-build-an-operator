@@ -23,14 +23,26 @@ objects:
     resources:
     - customresourcedefinitions
     verbs:
-    - "*"
+    - get
+    - list
+    - watch
+    - create
+    - delete
+    - patch
+    - update
   - apiGroups:
     - ""
     - security.openshift.io
     resources:
     - securitycontextconstraints
     verbs:
-    - "*"
+    - get
+    - list
+    - watch
+    - create
+    - delete
+    - patch
+    - update
   - apiGroups:
     - ""
     - authorization.openshift.io
@@ -38,7 +50,13 @@ objects:
     resources:
     - clusterroles
     verbs:
-    - "*"
+    - get
+    - list
+    - watch
+    - create
+    - delete
+    - patch
+    - update
   - apiGroups:
     - ""
     - authorization.openshift.io
@@ -46,4 +64,10 @@ objects:
     resources:
     - clusterrolebindings
     verbs:
-    - "*"
+    - get
+    - list
+    - watch
+    - create
+    - delete
+    - patch
+    - update
