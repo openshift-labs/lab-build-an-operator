@@ -2,6 +2,6 @@ You might call Site Reliability Engineering (SRE) a philosophy, or, if you’re 
 
 An Operator is like an automated Site Reliability Engineer dedicated to managing a specific application or task. It encodes the skills of an expert administrator in software. An Operator can manage a cluster of database servers, for example. It knows the details of configuring and managing its application, and it can install a database cluster of a declared software version and number of members. More distinctively, an Operator continues to monitor its application as it runs, and it can back up its data, recover from failures, and upgrade its application over time &ndash; automatically. Cluster users employ `kubectl` and other standard tools to work with Operators and the applications they manage, because Operators extend the Kubernetes control plane and API.
 
-In its simplest form, an Operator adds an endpoint to the Kubernetes API, called a Custom Resource (CR), along with a control plane component which watches for instances of the resource. This Operator, running in the control plane, can then take action based on the state of those resources.
+In its simplest form, an Operator adds an endpoint to the Kubernetes API, called a Custom Resource (CR), along with a control plane component which watches for instances of the resource. This Operator, running in the control plane, can then take actions based on the state of those resources.
 
 In this workshop you will learn in more detail how an Operator works, is implemented and is used by a user of the Kubernetes cluster.

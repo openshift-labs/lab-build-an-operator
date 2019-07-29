@@ -14,7 +14,7 @@ This should bring you to the [overview](%console_url%/overview/ns/%project_names
 
 ![](project-overview-page.png)
 
-Now select "Catalog->Installed Operators" from the left hand menu. This should bring up the list of [installed operators]&nbsp;(%console_url%/k8s/ns/%project_namespace%/clusterserviceversions)<span class="fas fa-window-restore"></span>.
+Now select "Catalog->Installed Operators" from the left hand menu. This should bring up the list of [installed operators](%console_url%/k8s/ns/%project_namespace%/clusterserviceversions)&nbsp;<span class="fas fa-window-restore"></span>.
 
 ![](installed-operators.png)
 
