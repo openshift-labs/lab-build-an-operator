@@ -5,6 +5,8 @@ modules:
         exit_sign: Start Workshop
     test-environment:
         name: Test Environment
+    verify-environment:
+        name: Verify Environment
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

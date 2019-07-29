@@ -3,5 +3,6 @@ name: Build an Operator
 modules:
     activate:
     - workshop-overview
-    - test-environment
+    # - test-environment
+    - verify-environment
     - workshop-summary
