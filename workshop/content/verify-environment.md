@@ -12,7 +12,7 @@ Did you type the command in yourself? If you did, click on the command instead a
 
 You may also see other icons used. The <span class="fas fa-copy"></span> icon will appear when you need to copy the text shown and paste it to a separate window. Click on the text, and the text will be automatically copied to your copy and paste buffer, ready for you to paste it.
 
-Where you see the <span class="fas fa-user-edit"></span> icon, clicking on the text will again automatically copy it to your copy and paster buffer. In this case, the different icon indicates that when you paste it to the required window, that you will need to then edit details of the text before using it.
+Where you see the <span class="fas fa-user-edit"></span> icon, clicking on the text will again automatically copy it to your copy and paste buffer. In this case, the different icon indicates that when you paste it to the required window, that you will need to then edit details of the text before using it.
 
 Having run `oc project`, you should see the message:
 
@@ -22,7 +22,9 @@ Using project "%project_namespace%" on server "%kubernetes_url%".
 
 The project you will be working in will thus be `%project_namespace%`.
 
-To check that you can deploy applications, run the command:
+You will not be able to create projects. As a result, do not attempt to delete your current project as you will not be able to recreate it and will need to start over.
+
+To check that you can deploy applications to the project, run the command:
 
 ```execute
 oc auth can-i create pods
