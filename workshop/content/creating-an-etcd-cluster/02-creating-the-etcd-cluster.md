@@ -4,7 +4,7 @@ From the list of [installed operators](%console_url%/k8s/ns/%project_namespace%/
 
 Much of the information in this page of the web console is generated from the `clusterserviceversion` resource object for the `etcd` operator. This includes some instructions about using `etcd`, but more importantly lists the options you have for creating a new `etcd` cluster, or tasks for backing up or restoring an existing `etcd` cluster managed by the `etcd` operator.
 
-This highlights the important of the `clusterserviceversion` resource object. It is required when wishing to have an operator installed into a cluster be managed by the Operator Lifecycle Manager, and have it available through the web console for developers to use.
+This highlights the importance of the `clusterserviceversion` resource object. It is required when wishing to have an operator installed into a cluster be managed by the Operator Lifecycle Manager, and have it available through the web console for developers to use.
 
 You can browse through the YAML definition of the `clusterserviceversion` for the `etcd` operator by selecting on the "YAML" tab. When done looking, return back to the "Overview" tab.
 

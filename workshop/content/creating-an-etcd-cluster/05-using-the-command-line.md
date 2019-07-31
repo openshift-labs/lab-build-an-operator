@@ -83,3 +83,9 @@ kubectl get all -l etcd_cluster=example -o name
 ```
 
 You will see that the only extra resources it has created beyond the pods which is it managing directly, are the service objects which allow the cluster to be accessed by applications wishing to use it.
+
+Before we move ahead, let's end the watch command:
+
+```execute-2
+<ctrl+c>
+```
