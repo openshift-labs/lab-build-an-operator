@@ -16,6 +16,8 @@ modules:
         name: Editing the Cluster Details
     creating-an-etcd-cluster/04-deleting-the-etcd-cluster:
         name: Deleting the etcd Cluster
+    creating-an-etcd-cluster/05-using-the-command-line:
+        name: Using the Command Line
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

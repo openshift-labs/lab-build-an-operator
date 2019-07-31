@@ -9,4 +9,5 @@ modules:
     - creating-an-etcd-cluster/02-creating-the-etcd-cluster
     - creating-an-etcd-cluster/03-editing-the-cluster-details
     - creating-an-etcd-cluster/04-deleting-the-etcd-cluster
+    - creating-an-etcd-cluster/05-using-the-command-line
     - workshop-summary
