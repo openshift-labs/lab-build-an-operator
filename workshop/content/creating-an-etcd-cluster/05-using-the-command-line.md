@@ -72,12 +72,14 @@ As you can see, there aren't any instances of the resource types used with tradi
 
 This is because it is the `etcd` operator itself which is directly managing the creation of the pods, and replacing them if they terminate unexpectedly. The operator is there acting as a controller, in much the same way as occurs for `replicationcontroller` `replicaset`, `statefulset` or `daemonset`.
 
-The reason that the operator manages the pods directly, is that replacing a terminated pod isn't as simple as running a new one in its place. The operator needs to ensure that the new instance is correctly joined into the existing cluster, any state for the cluster copied to the new instance from an existing member, and a new leader election run.
+The reason that the `etcd` operator manages the pods directly, is that replacing a terminated pod isn't as simple as running a new one in its place. The operator needs to ensure that the new instance is correctly joined into the existing cluster, any state for the cluster copied to the new instance from an existing member, and a new leader election run.
 
-It is the need for such special steps in managing the set of pods in the cluster, that the operator is fulfilling.
+It is the need for such special steps in managing the set of pods in the cluster, that the operator is fulfilling, and why `replicationcontroller` `replicaset`, `statefulset` or `daemonset` cannot be used.
 
 The get a list of resources the that `etcd` operator has created, run:
 
 ```execute
 kubectl get all -l etcd_cluster=example -o name
 ```
+
+You will see that the only extra resources it has created beyond the pods which is it managing directly, are the service objects which allow the cluster to be accessed by applications wishing to use it.
