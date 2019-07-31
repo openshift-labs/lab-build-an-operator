@@ -70,11 +70,11 @@ No resources found.
 
 As you can see, there aren't any instances of the resource types used with traditional application deployments, for managing a set of pods, and ensuring they are kept running.
 
-This is because it is the `etcd` operator itself which is directly managing the creation of the pods, and replacing them if they terminate unexpectedly. The operator is therefore acting as a controller, in much the same way as occurs for `replicationcontroller` `replicaset`, `statefulset` or `daemonset`.
+This is because it is the `etcd` operator itself which is directly managing the creation of the pods, and replacing them if they terminate unexpectedly. The operator is therefore acting as a controller, in much the same way as occurs for `replicationcontroller`, `replicaset`, `statefulset` or `daemonset`.
 
 The reason that the `etcd` operator manages the pods directly, is that replacing a terminated pod isn't as simple as running a new one in its place. The operator needs to ensure that the new instance is correctly joined into the existing cluster, any state for the cluster copied to the new instance from an existing member, and a new leader election run.
 
-It is the need for such special steps in managing the set of pods in the cluster, that the operator is fulfilling, and why `replicationcontroller` `replicaset`, `statefulset` or `daemonset` cannot be used.
+It is the need for such special steps in managing the set of pods in the cluster, that the operator is fulfilling, and why `replicationcontroller`, `replicaset`, `statefulset` or `daemonset` cannot be used.
 
 The get a list of resources the that `etcd` operator has created, run:
 
