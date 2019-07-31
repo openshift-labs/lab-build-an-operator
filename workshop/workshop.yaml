@@ -7,4 +7,6 @@ modules:
     - verify-environment
     - creating-an-etcd-cluster/01-listing-installed-operators
     - creating-an-etcd-cluster/02-creating-the-etcd-cluster
+    - creating-an-etcd-cluster/03-editing-the-cluster-details
+    - creating-an-etcd-cluster/04-deleting-the-etcd-cluster
     - workshop-summary

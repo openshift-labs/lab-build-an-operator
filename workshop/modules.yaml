@@ -12,6 +12,10 @@ modules:
         name: Listing Installed Operators
     creating-an-etcd-cluster/02-creating-the-etcd-cluster:
         name: Creating the etcd Cluster
+    creating-an-etcd-cluster/03-editing-the-cluster-details:
+        name: Editing the Cluster Details
+    creating-an-etcd-cluster/04-deleting-the-etcd-cluster:
+        name: Deleting the etcd Cluster
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop
