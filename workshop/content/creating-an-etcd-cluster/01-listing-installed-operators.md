@@ -20,10 +20,8 @@ Now select "Catalog->Installed Operators" from the left hand menu. This should b
 
 It is possible that you may see other operators which have been enabled and are available. It will depend on what the cluster admin has setup.
 
-The list of installed operators is generated from the instances of the ClusterServiceVersions resource which exist in a project. You can query them from the command line by running:
+The list of installed operators, and what you can do with them through the web console, is determined from the instances of the `clusterserviceversion` resources which exist in a project. You can query them from the command line by running:
 
 ```execute
 oc get clusterserviceversions
 ```
-
-We will revist the ClusterServiceVersion resource later on when we delve into how to build your own operator using the Operator SDK.
