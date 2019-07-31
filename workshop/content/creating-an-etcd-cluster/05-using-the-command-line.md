@@ -52,7 +52,7 @@ Kill that pod by running:
 kubectl delete $POD
 ```
 
-You will see the pod terminating, and then after a short way it will be replaced with a new instance.
+You will see the pod terminating, and then after a short wait it will be replaced with a new instance.
 
 That the pod is replaced when terminated, is behaviour which should be familiar to you from traditional deployments of applications in a Kubernetes cluster. What is happening here though, isn't quite the same.
 
@@ -68,10 +68,16 @@ The output you will see is:
 No resources found.
 ```
 
-There isn't therefore any instances of the resource types associated with traditional application deployments, for managing a set of pods, and ensuring they are kept running.
+As you can see, there aren't any instances of the resource types used with traditional application deployments, for managing a set of pods, and ensuring they are kept running.
 
-This is because it is the `etcd` operator itself which is directly managing the creation of the pods, and replacing them if they terminate unexpectedly. the operator is there acting as a controller, in much the same way as occurs for a `replicaset`, `statefulset` or `daemonset`.
+This is because it is the `etcd` operator itself which is directly managing the creation of the pods, and replacing them if they terminate unexpectedly. The operator is there acting as a controller, in much the same way as occurs for `replicationcontroller` `replicaset`, `statefulset` or `daemonset`.
 
-The reason that the operator manages the pods directly, is that replacing a terminated pod isn't as simple as running a new one in its place. The operator needs to ensure that the new instance is correctly joined into the existing, any state for the cluster copied to the new instance from an exist member, and a new leader election run.
+The reason that the operator manages the pods directly, is that replacing a terminated pod isn't as simple as running a new one in its place. The operator needs to ensure that the new instance is correctly joined into the existing cluster, any state for the cluster copied to the new instance from an existing member, and a new leader election run.
 
 It is the need for such special steps in managing the set of pods in the cluster, that the operator is fulfilling.
+
+The get a list of resources the that `etcd` operator has created, run:
+
+```execute
+kubectl get all -l etcd_cluster=example -o name
+```
