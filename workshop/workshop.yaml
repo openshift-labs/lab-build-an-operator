@@ -3,7 +3,7 @@ name: Build an Operator
 modules:
     activate:
     - workshop-overview
-    # - test-environment
+    - test-environment
     - verify-environment
     - creating-an-etcd-cluster/01-listing-installed-operators
     - creating-an-etcd-cluster/02-creating-the-etcd-cluster
