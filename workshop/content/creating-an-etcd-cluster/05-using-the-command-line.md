@@ -98,7 +98,7 @@ This will reduce the number of instance members in the cluster from 3 down to 1.
 
 You could also use `kubectl edit` or other methods for updating in place the existing custom resource definition.
 
-We are done with the `etcd` cluster, so you can know delete the cluster.
+We are done with the `etcd` cluster, so you can now delete the cluster, by deleting the custom resource.
 
 ```execute
 kubectl delete etcdcluster/example
