@@ -10,7 +10,7 @@ The benefit of using the Go Operator SDK is that it uses the controller-runtime 
 * Tools for scaffolding and code generation to bootstrap a new project quickly.
 * Extensions to cover more common operator use cases.
 
- The general steps for creating an operator using the SDK which you will be guided through are:
+The general steps for creating an operator using the SDK which you will be guided through are:
 
 1. Creating a new operator project using the SDK CLI.
 2. Creating a new Custom Resource Definition API Type using the SDK CLI.
