@@ -20,7 +20,7 @@ modules:
         name: Using the Command Line
     using-the-operator-sdk/01-intro-to-the-operator-sdk:
         name: Intro to the Operator SDK
-    using-the-operator-sdk/02-initial-project-scaffolding.md:
+    using-the-operator-sdk/02-initial-project-scaffolding:
         name: Initial Project Scaffolding
     workshop-summary:
         name: Workshop Summary
