@@ -18,6 +18,8 @@ modules:
         name: Deleting the etcd Cluster
     creating-an-etcd-cluster/05-using-the-command-line:
         name: Using the Command Line
+    using-the-operator-sdk/01-intro-to-the-operator-sdk:
+        name: Intro to the Operator SDK
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

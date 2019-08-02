@@ -10,4 +10,5 @@ modules:
     - creating-an-etcd-cluster/03-editing-the-cluster-details
     - creating-an-etcd-cluster/04-deleting-the-etcd-cluster
     - creating-an-etcd-cluster/05-using-the-command-line
+    - using-the-operator-sdk/01-intro-to-the-operator-sdk
     - workshop-summary

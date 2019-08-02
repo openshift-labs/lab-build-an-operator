@@ -1,0 +1,3 @@
+As a user of a Kubernetes cluster, most of the time you would only be a consumer of existing operators which have been installed into the cluster. The primary use case would be to help you provision applications such as databases, or middleware products, including message queuing systems, rules management systems etc. A typical developer would never have a need to create their own operator.
+
+If you do have a need to implement an operator to manage use of an application, perhaps as a way of making it easier for users to consume your own product, to make that task easier, you can use the [Operator SDK](https://github.com/operator-framework/operator-sdk).
