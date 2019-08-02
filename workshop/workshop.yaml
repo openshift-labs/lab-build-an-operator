@@ -1,4 +1,5 @@
 name: Build an Operator
+description: Automate applications with k8s operators
 
 modules:
     activate:
