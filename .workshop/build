@@ -36,7 +36,7 @@ rm go${GO_RELEASE_VERSION}.linux-amd64.tar.gz
 
 rm -rf Dockerfile README.md LICENSE
 
-rm -rf scripts sudoers.d profiles
+rm -rf scripts sudoers profiles
 
 # If the workshop requires Git, it is necessary to set some defaults for
 # the name and email of the user for Git.
