@@ -1,13 +1,16 @@
 name: Build an Operator
+description: Automate applications with k8s operators
 
 modules:
     activate:
     - workshop-overview
-    # - test-environment
+    - test-environment
     - verify-environment
     - creating-an-etcd-cluster/01-listing-installed-operators
     - creating-an-etcd-cluster/02-creating-the-etcd-cluster
     - creating-an-etcd-cluster/03-editing-the-cluster-details
     - creating-an-etcd-cluster/04-deleting-the-etcd-cluster
     - creating-an-etcd-cluster/05-using-the-command-line
+    - using-the-operator-sdk/01-intro-to-the-operator-sdk
+    - using-the-operator-sdk/02-initial-project-scaffolding
     - workshop-summary
