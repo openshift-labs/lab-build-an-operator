@@ -37,3 +37,7 @@ The purposes of the directories are as follows.
 `deploy` - Contains the YAML manifests for registering the custom resources, setting up any special role base access control (RBAC) access as required by the operator, and deploying the operator.
 
 `vendor` - The vendor folder that contains the local copies of any external dependencies that satisfy the imports of this project.
+
+Note that when generating the scaffolding for an operator, you can specify whether the operator should be configured so as to only monitor a single namespace, or all namespaces in a cluster.
+
+In this example operator, the default of monitoring a single namespace only will be used. If you needed to implement an operator which can monitor all namespaces, you can supply the `--cluster-scoped` option to `operator-sdk new` when run.
