@@ -14,8 +14,10 @@ operator-sdk add api --api-version=app.example.com/v1alpha1 --kind=PodSet
 
 The output from the command will list the files generated.
 
-You can inspect the generated CRD, which describes the `PodSet` custom resource, by running:
+Note that this command may show Go compiler errors about unknown imports and finish with a usage error message from the `operator-sdk` program. This is due to an incompatibility between the version of the `operator-sdk` used and the Go compiler. The required files should have been generated okay, so you can ignore the errors and keep going with the following steps.
+
+To inspect the generated CRD, which describes the `PodSet` custom resource, run:
 
 ```execute
-deploy/crds/app_v1alpha1_podset_crd.yaml
+cat deploy/crds/app_v1alpha1_podset_crd.yaml
 ```
