@@ -30,6 +30,8 @@ modules:
         name: Adding Custom Attributes
     using-the-operator-sdk/05-load-crd-into-the-cluster:
         name: Load CRD into the Cluster
+    using-the-operator-sdk/06-adding-the-controller-code:
+        name: Adding the Controller Code
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

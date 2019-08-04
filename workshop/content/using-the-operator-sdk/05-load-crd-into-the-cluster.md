@@ -20,12 +20,6 @@ To see the custom attributes added to the `spec` for the custom resource, run:
 kubectl explain podset.spec
 ```
 
-and for the `status`, run:
-
-```execute
-kubectl explain podset.status
-```
-
 At the moment no descriptions have been provided for the custom attributes, so only information about the type of the attributes will be shown.
 
 To check that you can now create instances of the `podset` resource, run:
