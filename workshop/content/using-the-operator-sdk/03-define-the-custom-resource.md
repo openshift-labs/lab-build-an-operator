@@ -28,4 +28,4 @@ To see an example of the custom resource with appropriate API version and resour
 cat deploy/crds/app_v1alpha1_podset_cr.yaml
 ```
 
-Although the same custom resource shows a `spec.size` field, this is an example only. The next step required is to update the generated Go code file corresponding to the resource type and define the fields the custom resource is to have.
+Although the same custom resource shows a `spec.size` attribute, this is an example only. The next step required is to update the generated Go code file corresponding to the resource type and define the custom attributes the resource is to have.

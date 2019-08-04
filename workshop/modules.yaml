@@ -26,6 +26,8 @@ modules:
         name: Initial Project Scaffolding
     using-the-operator-sdk/03-define-the-custom-resource:
         name: Define the Custom Resource
+    using-the-operator-sdk/04-adding-custom-attributes:
+        name: Adding Custom Attributes
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

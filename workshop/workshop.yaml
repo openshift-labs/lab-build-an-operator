@@ -15,4 +15,5 @@ modules:
     - using-the-operator-sdk/01-intro-to-the-operator-sdk
     - using-the-operator-sdk/02-initial-project-scaffolding
     - using-the-operator-sdk/03-define-the-custom-resource
+    - using-the-operator-sdk/04-adding-custom-attributes
     - workshop-summary
