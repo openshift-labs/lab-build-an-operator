@@ -24,6 +24,8 @@ modules:
         name: Intro to the Operator SDK
     using-the-operator-sdk/02-initial-project-scaffolding:
         name: Initial Project Scaffolding
+    using-the-operator-sdk/03-defining-the-custom-resource:
+        name: Defining the Custom Resource
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop
