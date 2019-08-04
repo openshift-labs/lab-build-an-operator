@@ -1,6 +1,6 @@
 To see what operators may already have been installed into a cluster and which are available for you to use in your project, you can view them by visiting "Installed Operators" in the web console.
 
-Click on the "Console" tab in the workshop environment to bring up the web console in place of the terminal. You should be presented with the list of projects you have access to.
+If the web console is not already visible, click on the "Console" tab in the workshop environment to bring up the web console in place of the terminal. You should be presented with the list of projects you have access to.
 
 ![](project-list.png)
 
