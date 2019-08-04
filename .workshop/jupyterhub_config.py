@@ -1,3 +1,5 @@
+c.Spawner.start_timeout = 180
+
 c.KubeSpawner.privileged = True
 
 resource_budget_mapping['custom'] = {
