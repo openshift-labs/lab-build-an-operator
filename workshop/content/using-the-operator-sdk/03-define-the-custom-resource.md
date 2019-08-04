@@ -1,4 +1,4 @@
-To provide a definition for the custom resource that that the operator is to respond to, you need to create a Custom Resource Definition (CRD). For this example, the custom resource type name we will use is `PodSet`.
+To provide a definition for the custom resource that the operator is to respond to, you need to create a Custom Resource Definition (CRD). For this example, the custom resource type name we will use is `PodSet`.
 
 Because developers of different operators may choose to use the same name for a custom resource, resource types are grouped under an API group, where different developers would use their own unique name for the group.
 

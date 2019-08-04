@@ -28,7 +28,7 @@ type PodSet struct {
 
 For this example operator, we want to add a `replicas` attribute to the `spec` portion of the custom resource. This will specify how many instances of the application we want. The `PodSetSpec` structure therefore needs to be updated to:
 
-```copy
+```
 type PodSetSpec struct {
         Replicas int32 `json:"replicas"`
 }
@@ -37,7 +37,7 @@ type PodSetSpec struct {
 
 To track the names of the pods corresponding to those instances, we also add a `podNames` attribute to the `status` portion of the custom resource. The `status` portion is where the operator keeps any attributes it needs to track the status of the deployment based on the custom resource.
 
-```copy
+```
 type PodSetStatus struct {
         PodNames []string `json:"podNames"`
 }
@@ -48,8 +48,6 @@ To patch the `podset_types.go` file with these changes, run:
 ```execute
 patch -p0 < $HOME/patches/podset_types.go.diff
 ```
-
-Alternatively, you can if you want, edit the file manually using `vi` or `nano` and make the required changes.
 
 After making any changes to the Go code files containing the custom resource definitions, you need to run:
 
