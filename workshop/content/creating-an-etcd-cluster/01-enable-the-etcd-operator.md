@@ -2,13 +2,13 @@ In this first set of exercises you will install an `etcd` cluster into your proj
 
 Before we can get started, we need to check that the `etcd` operator has been enabled and is setup to monitor all namespaces in the cluster. If it hasn't we will enable it from the OperatorHub.
 
-To get the the OperatorHub in the web console first click on the "Console" tab in the workshop environment to bring up the web console in place of the terminal.
+To get to the OperatorHub in the web console first click on the "Console" tab in the workshop environment to bring up the web console in place of the terminal.
 
 Now click on "Catalog->OperatorHub" in the left hand menu of the web console. If the left hand menu is not visible, you can expose it by clicking on the hamburger menu on the left side of the web console banner. Alternatively click on this [OperatorHub](%console_url%/operatorhub)&nbsp;<span class="fas fa-window-restore"></span> link.
 
 ![](operatorhub-listing.png)
 
-Scroll down until you find the "Filter by keyword..." text box and enter `etcd`. This should restrict the list of operators to just that for `etcd`.
+Scroll down in the web console until you find the "Filter by keyword..." text box and enter `etcd`. This should restrict the list of operators to just that for `etcd`.
 
 ![](operatorhub-etcd-not-installed.png)
 
