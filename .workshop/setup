@@ -1,1 +1,3 @@
 #!/bin/bash
+
+oc project ${PROJECT_NAMESPACE}

@@ -19,55 +19,57 @@ objects:
       app: ${SPAWNER_APPLICATION}-${SPAWNER_NAMESPACE}
       spawner: learning-portal
   data:
-    extra_resources.json: |-
-      {
-        "kind": "List",
-        "apiVersion": "v1",
-        "items": [
-          {
-            "kind": "SecurityContextConstraints",
-            "apiVersion": "security.openshift.io/v1",
-            "metadata": {
-              "name": "${project_namespace}-containers",
-              "labels": {
-                "app": "${application_name}-${spawner_namespace}",
-                "project": "${project_namespace}"
-              }
-            },
-            "priority": 888,
-            "runAsUser": {
-              "type": "MustRunAsRange"
-            },
-            "seLinuxContext": {
-              "type": "MustRunAs"
-            },
-            "fsGroup": {
-              "type": "MustRunAs"
-            },
-            "requiredDropCapabilities": [
-              "KILL",
-              "MKNOD"
-            ],
-            "allowHostDirVolumePlugin": false,
-            "allowHostIPC": false,
-            "allowHostNetwork": false,
-            "allowHostPID": false,
-            "allowHostPorts": false,
-            "allowPrivilegeEscalation": true,
-            "allowPrivilegedContainer": true,
-            "allowedCapabilities": null,
-            "defaultAddCapabilities": null,
-            "users": [
-              "system:serviceaccount:${spawner_namespace}:${service_account}"
-            ],
-            "volumes": [
-              "configMap",
-              "downwardAPI",
-              "emptyDir",
-              "persistentVolumeClaim",
-              "projected",
-              "secret"
-            ]
-          }
-        ]
-      }
+    extra_resources.yaml: |-
+      kind: List
+      apiVersion: v1
+      items:
+      - kind: ClusterRoleBinding
+        apiVersion: rbac.authorization.k8s.io/v1
+        metadata:
+          name: cluster-admin-${service_account}
+          labels:
+            app: ${application_name}-${spawner_namespace}
+            project: ${project_namespace}
+        subjects:
+        - kind: ServiceAccount
+          name: ${service_account}
+          namespace: ${spawner_namespace}
+        roleRef:
+          apiGroup: rbac.authorization.k8s.io
+          kind: ClusterRole
+          name: cluster-admin
+      - kind: SecurityContextConstraints
+        apiVersion: security.openshift.io/v1
+        metadata:
+          name: ${project_namespace}-containers
+          labels:
+            app: ${application_name}-${spawner_namespace}
+            project: ${project_namespace}
+        priority: 888
+        runAsUser:
+          type: MustRunAsRange
+        seLinuxContext:
+          type: MustRunAs
+        fsGroup:
+          type: MustRunAs
+        requiredDropCapabilities:
+        - KILL
+        - MKNOD
+        allowHostDirVolumePlugin: false
+        allowHostIPC: false
+        allowHostNetwork: false
+        allowHostPID: false
+        allowHostPorts: false
+        allowPrivilegeEscalation: true
+        allowPrivilegedContainer: true
+        allowedCapabilities: 
+        defaultAddCapabilities: 
+        users:
+        - system:serviceaccount:${spawner_namespace}:${service_account}
+        volumes:
+        - configMap
+        - downwardAPI
+        - emptyDir
+        - persistentVolumeClaim
+        - projected
+        - secret
