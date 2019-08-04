@@ -10,11 +10,11 @@ The key structures are:
 
 ```
 type PodSetSpec struct {
-        // Need to add attributes here.
+        // INSERT ADDITIONAL SPEC FIELDS
 }
 
 type PodSetStatus struct {
-        // Need to add attributes here.
+        // INSERT ADDITIONAL STATUS FIELD
 }
 
 type PodSet struct {
@@ -43,10 +43,10 @@ type PodSetStatus struct {
 }
 ```
 
-To patch the `podset_types.go` file with this changes, run:
+To patch the `podset_types.go` file with these changes, run:
 
 ```execute
 patch -p0 < $HOME/patches/podset_types.go.diff
 ```
 
-Alternatively, you can if you want, edit the file manually using `vi` or `nano`.
+Alternatively, you can if you want, edit the file manually using `vi` or `nano` and make the required changes.
