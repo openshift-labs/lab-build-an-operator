@@ -18,22 +18,22 @@ We are using the project directory `podset-operator` to generate the project. Ch
 cd podset-operator
 ```
 
-Run:
+To see the contents of the generated project directory, run:
 
 ```execute
 ls
 ```
 
-to see the contents of the generated project directory.
+The purposes of the directories are as follows.
 
-The primary directories and files that the `operator-sdk new` command generates are:
+`cmd` - Contains the file `manager/main.go`, which is the main program of the operator. This instantiates a new manager which registers all custom resource definitions under the directory `pkg/apis/...` and starts all controllers under the directory `pkg/controllers/...`.
 
+`pkg/apis` - The directory tree containing the files that specify the APIs of the Custom Resources. For each custom resource (`kind`), it is necessary to edit the `pkg/apis/<group>/<version>/<kind>_types.go` file to define the API. These will be imported into their respective controllers to watch for changes in these resource types.
 
-| Directory      | Purpose |
-| :---           | :--- |
-| cmd       | Contains `manager/main.go` which is the main program of the operator. This instantiates a new manager which registers all custom resource definitions under `pkg/apis/...` and starts all controllers under `pkg/controllers/...`  . |
-| pkg/apis | Contains the directory tree that defines the APIs of the Custom Resource Definitions(CRD). Users are expected to edit the `pkg/apis/<group>/<version>/<kind>_types.go` files to define the API for each resource type and import these packages in their controllers to watch for these resource types.|
-| pkg/controller | This pkg contains the controller implementations. Users are expected to edit the `pkg/controller/<kind>/<kind>_controller.go` to define the controller's reconcile logic for handling a resource type of the specified `kind`. |
-| build | Contains the `Dockerfile` and build scripts used to build the operator. |
-| deploy | Contains various YAML manifests for registering CRDs, setting up [RBAC][RBAC], and deploying the operator as a Deployment.
-| vendor | The golang vendor folder that contains the local copies of the external dependencies that satisfy the imports of this project. |
+`pkg/controller` - Contains the implementation of the controllers. For each custom resource, is it necessary to edit the `pkg/controller/<kind>/<kind>_controller.go` file to define the controller's reconcile logic for handling that resource type.
+
+`build` - Contains the `Dockerfile` and build scripts used to build the operator.
+
+`deploy` - Contains the YAML manifests for registering the custom resources, setting up any special role base access control (RBAC) access as required by the operator, and deploying the operator.
+
+`vendor` - The vendor folder that contains the local copies of any external dependencies that satisfy the imports of this project.
