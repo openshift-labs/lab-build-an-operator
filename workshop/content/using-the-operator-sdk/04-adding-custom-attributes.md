@@ -50,3 +50,29 @@ patch -p0 < $HOME/patches/podset_types.go.diff
 ```
 
 Alternatively, you can if you want, edit the file manually using `vi` or `nano` and make the required changes.
+
+After making any changes to the Go code files containing the custom resource definitions, you need to run:
+
+```execute
+operator-sdk generate k8s
+```
+
+This will re-generate certain code files which depend on the definition of the custom resource.
+
+Also run:
+
+```execute
+operator-sdk generate openapi
+```
+
+This will re-generate the CRD file, updating the OpenAPI schema definition which describes the attributes. The schema is used for validating that a custom resource when created is valid, and is also used when running `kubectl explain` on a custom resource type to generate information about it.
+
+For more information on the schema, see the Kubernetes documentation on [specifying a structural schema](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/#specifying-a-structural-schema).
+
+To see the updated version of the CRD file run:
+
+```execute
+cat deploy/crds/app_v1alpha1_podset_crd.yaml
+```
+
+The schema definition for the custom resource can be found under the `spec.validation.openAPIV3Schema` field.
