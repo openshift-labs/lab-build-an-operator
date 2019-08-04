@@ -46,7 +46,7 @@ type PodSetStatus struct {
 To patch the `podset_types.go` file with this changes, run:
 
 ```execute
-patch < $HOME/patches/podset_types.go.diff
+patch -p0 < $HOME/patches/podset_types.go.diff
 ```
 
 Alternatively, you can if you want, edit the file manually using `vi` or `nano`.
