@@ -28,6 +28,8 @@ modules:
         name: Define the Custom Resource
     using-the-operator-sdk/04-adding-custom-attributes:
         name: Adding Custom Attributes
+    using-the-operator-sdk/05-load-crd-into-the-cluster:
+        name: Load CRD into the Cluster
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

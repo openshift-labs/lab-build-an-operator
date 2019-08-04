@@ -16,4 +16,5 @@ modules:
     - using-the-operator-sdk/02-initial-project-scaffolding
     - using-the-operator-sdk/03-define-the-custom-resource
     - using-the-operator-sdk/04-adding-custom-attributes
+    - using-the-operator-sdk/05-load-crd-into-the-cluster
     - workshop-summary
