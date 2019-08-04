@@ -21,7 +21,7 @@ cd podset-operator
 To see the contents of the generated project directory, run:
 
 ```execute
-ls
+ls -las
 ```
 
 The purposes of the directories are as follows.
@@ -30,7 +30,7 @@ The purposes of the directories are as follows.
 
 `pkg/apis` - The directory tree containing the files that specify the APIs of the Custom Resources. For each custom resource (`kind`), it is necessary to edit the `pkg/apis/<group>/<version>/<kind>_types.go` file to define the API. These will be imported into their respective controllers to watch for changes in these resource types.
 
-`pkg/controller` - Contains the implementation of the controllers. For each custom resource, is it necessary to edit the `pkg/controller/<kind>/<kind>_controller.go` file to define the controller's reconcile logic for handling that resource type.
+`pkg/controller` - Contains the implementation of the controllers. For each custom resource, is it necessary to edit the `pkg/controller/<kind>/<kind>_controller.go` file to define the controller's reconciliation logic for handling that resource type.
 
 `build` - Contains the `Dockerfile` and build scripts used to build the operator.
 

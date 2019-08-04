@@ -22,4 +22,4 @@ The general steps for creating an operator using the SDK which you will be guide
 8. Using the SDK CLI to build and generate the operator Deployment manifests.
 9. Optionally add additional APIs and Controllers using the SDK CLI.
 
-The example operator you will creating implements a common pattern of operators which you saw in action with the `etcd` operator. That is, the creation and management of a set of pods, and scaling the number of pods.
+The example operator you will be creating implements a common pattern of operators which you saw in action with the `etcd` operator. That is, the creation and management of a set of pods, and scaling the number of pods.
