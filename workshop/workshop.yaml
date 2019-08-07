@@ -4,7 +4,7 @@ description: Automate applications with k8s operators
 modules:
     activate:
     - workshop-overview
-    - test-environment
+    # - test-environment
     - verify-environment
     - creating-an-etcd-cluster/01-enable-the-etcd-operator
     - creating-an-etcd-cluster/02-listing-installed-operators
