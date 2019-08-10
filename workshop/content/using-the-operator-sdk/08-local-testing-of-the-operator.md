@@ -5,7 +5,7 @@ by building the operator binary and then running it against the Kubernetes clust
 
 The command for this would have been:
 
-```execute
+```
 operator-sdk up local --namespace %project_namespace%
 ```
 

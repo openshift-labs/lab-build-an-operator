@@ -32,12 +32,14 @@ modules:
         name: Load CRD into the Cluster
     using-the-operator-sdk/06-adding-the-controller-code:
         name: Adding the Controller Code
-    using-the-operator-sdk/07-reconciliation-loop-code:
-        name: Reconciliation Loop Code
+    using-the-operator-sdk/07-define-the-reconcile-function:
+        name: Define the Reconcile Function
     using-the-operator-sdk/08-local-testing-of-the-operator:
         name: Local Testing of the Operator
     using-the-operator-sdk/09-building-the-operator-image:
         name: Building the Operator Image
+    using-the-operator-sdk/10-deploying-the-operator-image:
+        name: Deploying the Operator Image
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop
