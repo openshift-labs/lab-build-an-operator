@@ -1,4 +1,4 @@
-From the list of [installed operators](%console_url%/k8s/ns/%project_namespace%/clusterserviceversions)&nbsp;<span class="fas fa-window-restore"></span>, find the `etcd` entry. If you have a large list of operators available to you, enter `etcd` into the "Filter Cluster Service Versions by name" text box, to filter out the other operators. Click on the entry for `etcd`. This should bring up a description of the `etcd` operator. The exact version of `etcd` available may differ depending on what is available.
+From the list of [installed operators](%console_url%/k8s/ns/%project_namespace%/clusterserviceversions)&nbsp;<span class="fas fa-window-restore"></span>, find the `etcd` entry. If you have a large list of operators available to you, enter `etcd` into the "Filter Cluster Service Versions by name" text box. Click on the entry for `etcd`. This should bring up a description of the `etcd` operator.
 
 ![](etcd-operator-description.png)
 

@@ -8,20 +8,30 @@ modules:
     verify-environment:
         name: Verify Environment
         exit_sign: Start Workshop
-    creating-an-etcd-cluster/01-listing-installed-operators:
+    creating-an-etcd-cluster/01-enable-the-etcd-operator:
+        name: Enable the etcd Operator
+    creating-an-etcd-cluster/02-listing-installed-operators:
         name: Listing Installed Operators
-    creating-an-etcd-cluster/02-creating-the-etcd-cluster:
+    creating-an-etcd-cluster/03-creating-the-etcd-cluster:
         name: Creating the etcd Cluster
-    creating-an-etcd-cluster/03-editing-the-cluster-details:
+    creating-an-etcd-cluster/04-editing-the-cluster-details:
         name: Editing the Cluster Details
-    creating-an-etcd-cluster/04-deleting-the-etcd-cluster:
+    creating-an-etcd-cluster/05-deleting-the-etcd-cluster:
         name: Deleting the etcd Cluster
-    creating-an-etcd-cluster/05-using-the-command-line:
+    creating-an-etcd-cluster/06-using-the-command-line:
         name: Using the Command Line
     using-the-operator-sdk/01-intro-to-the-operator-sdk:
         name: Intro to the Operator SDK
     using-the-operator-sdk/02-initial-project-scaffolding:
         name: Initial Project Scaffolding
+    using-the-operator-sdk/03-define-the-custom-resource:
+        name: Define the Custom Resource
+    using-the-operator-sdk/04-adding-custom-attributes:
+        name: Adding Custom Attributes
+    using-the-operator-sdk/05-load-crd-into-the-cluster:
+        name: Load CRD into the Cluster
+    using-the-operator-sdk/06-adding-the-controller-code:
+        name: Adding the Controller Code
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

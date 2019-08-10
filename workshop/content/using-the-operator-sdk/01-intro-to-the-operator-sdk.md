@@ -14,12 +14,11 @@ The general steps for creating an operator using the SDK which you will be guide
 
 1. Creating a new operator project using the SDK CLI.
 2. Creating a new Custom Resource Definition API Type using the SDK CLI.
-3. Adding your Custom Resource Definition (CRD) to the Kubernetes cluster.
-4. Defining the Spec and Status sections of the Custom Resource.
+3. Defining the Spec and Status sections of the Custom Resource.
+4. Adding your Custom Resource Definition (CRD) to the Kubernetes cluster.
 5. Creating a new Controller for your Custom Resource Definition API.
 6. Writing the reconciliation logic for your Controller.
 7. Running the operator to test your code against the Kubernetes cluster.
 8. Using the SDK CLI to build and generate the operator Deployment manifests.
-9. Optionally add additional APIs and Controllers using the SDK CLI.
 
-The example operator you will creating implements a common pattern of operators which you saw in action with the `etcd` operator. That is, the creation and management of a set of pods, and scaling the number of pods.
+The example operator you will be creating implements a common pattern of operators which you saw in action with the `etcd` operator. That is, the creation and management of a set of pods, and scaling the number of pods.

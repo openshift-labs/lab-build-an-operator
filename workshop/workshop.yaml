@@ -4,13 +4,18 @@ description: Automate applications with k8s operators
 modules:
     activate:
     - workshop-overview
-    - test-environment
+    # - test-environment
     - verify-environment
-    - creating-an-etcd-cluster/01-listing-installed-operators
-    - creating-an-etcd-cluster/02-creating-the-etcd-cluster
-    - creating-an-etcd-cluster/03-editing-the-cluster-details
-    - creating-an-etcd-cluster/04-deleting-the-etcd-cluster
-    - creating-an-etcd-cluster/05-using-the-command-line
+    - creating-an-etcd-cluster/01-enable-the-etcd-operator
+    - creating-an-etcd-cluster/02-listing-installed-operators
+    - creating-an-etcd-cluster/03-creating-the-etcd-cluster
+    - creating-an-etcd-cluster/04-editing-the-cluster-details
+    - creating-an-etcd-cluster/05-deleting-the-etcd-cluster
+    - creating-an-etcd-cluster/06-using-the-command-line
     - using-the-operator-sdk/01-intro-to-the-operator-sdk
     - using-the-operator-sdk/02-initial-project-scaffolding
+    - using-the-operator-sdk/03-define-the-custom-resource
+    - using-the-operator-sdk/04-adding-custom-attributes
+    - using-the-operator-sdk/05-load-crd-into-the-cluster
+    - using-the-operator-sdk/06-adding-the-controller-code
     - workshop-summary

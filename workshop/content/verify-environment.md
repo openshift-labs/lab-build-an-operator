@@ -16,7 +16,7 @@ Where you see the <span class="fas fa-user-edit"></span> icon, clicking on the t
 
 Embedded links can also be annotated with the <span class="fas fa-window-restore"></span> icon. This is used on links which when clicked on, will bring the "Terminal" tab, or "Console" tab to the front if necessary, and take you to a specific view within the web console, without the need for you to navigate there yourself.
 
-Having run `oc project`, you should see the message:
+Having run the `oc project` command above, you should have seen the message:
 
 ```
 Using project "%project_namespace%" on server "%kubernetes_url%".
@@ -24,7 +24,7 @@ Using project "%project_namespace%" on server "%kubernetes_url%".
 
 The project you will be working in will thus be `%project_namespace%`.
 
-You will not be able to create projects. As a result, do not attempt to delete your current project as you will not be able to recreate it and will need to start over.
+Do not delete this project as you will not be able to recreate it and will need to start over.
 
 To check that you can deploy applications to the project, run the command:
 
