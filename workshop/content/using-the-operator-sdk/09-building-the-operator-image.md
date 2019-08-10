@@ -14,7 +14,7 @@ To start the build run:
 operator-sdk build --image-builder buildah %image_registry%/%project_namespace%/podset-operator
 ```
 
-This will take a while the first time it is run because it needs to compile all the Go code which makes up the operator and the packages it uses.
+<span class="fas fa-exclamation-circle"></span> This will take a while the first time it is run because it needs to compile all the Go code which makes up the operator and the packages it uses.
 
 Once the build completes, to see that the container image has been created, run:
 
