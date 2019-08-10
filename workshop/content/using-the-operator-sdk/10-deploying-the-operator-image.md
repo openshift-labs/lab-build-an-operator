@@ -10,19 +10,19 @@ In this resource definition you will see that `spec.template.spec.containers.ima
 image: REPLACE_IMAGE
 ```
 
-We need to update `REPLACE_IMAGE`, changing it to reference where the image from the internal image registry where we pushed it. To change this, run:
+We need to update `REPLACE_IMAGE`, changing it to reference the image from the internal image registry where we pushed it. To change this, run:
 
 ```execute
-sed -i.bak -e "s#REPLACE_IMAGE#%image_registry%/%project_namespace%/podset-operator:latest#"" deploy/operator.yaml
+sed -i.bak -e "s#REPLACE_IMAGE#%image_registry%/%project_namespace%/podset-operator:latest#" deploy/operator.yaml
 ```
 
-Before we create this resource, we first need to create the service account which it has been set up to run as:
+Before we create this resource, we first need to create the service account which the deployment has been set up to run as:
 
 ```execute
 kubectl apply -f deploy/service_account.yaml
 ```
 
-We also need to create role indicating what actions the service account can take:
+We also need to create a role indicating what actions the service account can take:
 
 ```execute
 kubectl apply -f deploy/role.yaml
