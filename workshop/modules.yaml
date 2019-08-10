@@ -40,6 +40,8 @@ modules:
         name: Building the Operator Image
     using-the-operator-sdk/10-deploying-the-operator-image:
         name: Deploying the Operator Image
+    using-the-operator-sdk/11-testing-the-deployed-operator:
+        name: Testing the Deployed Operator
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop
