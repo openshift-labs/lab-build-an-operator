@@ -32,4 +32,4 @@ When the options are correct, click on "Subscribe". On the next page, wait until
 
 ![](etcd-operator-subscription-installed.png)
 
-Return back to the list of projects by selecting "Home->Projects" in the menu.
+Return back to the list of projects by selecting "Home->Projects" in the menu, or click on this [projects](%console_url%/k8s/cluster/projects)&nbsp;<span class="fas fa-window-restore"></span> link.
