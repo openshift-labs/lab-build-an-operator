@@ -45,7 +45,7 @@ You can determine the hostname for the URL to access the workshop by running:
 oc get route lab-build-an-operator
 ```
 
-When the URL for the workshop is accessed you will be prompted for a user name and password. Use your email address as a unique identifier for the user name. This is only used to ensure you get a unique session and can attach to the same session from a different browser or computer if need be. For this workshop, the password you supply must be `operators`.
+When the URL for the workshop is accessed you will be prompted for a user name and password. Use your email address or some other unique identifier for the user name. This is only used to ensure you get a unique session and can attach to the same session from a different browser or computer if need be. The password you must supply is ``openshift``.
 
 Building the Workshop
 ---------------------
