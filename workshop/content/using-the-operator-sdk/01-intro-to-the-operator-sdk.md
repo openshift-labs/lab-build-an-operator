@@ -21,4 +21,4 @@ The general steps for creating an operator using the SDK which you will be guide
 7. Running the operator to test your code against the Kubernetes cluster.
 8. Using the SDK CLI to build and generate the operator Deployment manifests.
 
-The example operator you will be creating implements a common pattern of operators which you saw in action with the `etcd` operator. That is, the creation and management of a set of pods, and scaling the number of pods.
+The example operator you will be creating implements a common pattern of operators. That is, the creation and management of a set of pods, and scaling the number of pods.
