@@ -8,7 +8,9 @@ This highlights the importance of the `clusterserviceversion` resource object. I
 
 You can browse through the YAML definition of the `clusterserviceversion` for the `etcd` operator by selecting on the "YAML" tab. When done looking, return back to the "Overview" tab.
 
-To create a new `etcd` cluster from this page, now click on "Create New" of the "etcd Cluster" card under "Provided APIs". You can also get there by clicking on the "etcd Cluster" tab and then clicking on the "Create etcd Cluster" button.
+At this point, double check that the web console shows you as being in the `%project_namespace%` project, and not some other project.
+
+To create a new `etcd` cluster from this page in your project, now click on "Create New" of the "etcd Cluster" card under "Provided APIs". You can also get there by clicking on the "etcd Cluster" tab and then clicking on the "Create etcd Cluster" button.
 
 This will bring up an editor on a pre-filled YAML definition for a custom resource, which when created, will in turn trigger the creation of the `etcd` cluster.
 
