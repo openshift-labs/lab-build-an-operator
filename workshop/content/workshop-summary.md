@@ -1,4 +1,4 @@
-In this workshop you learned how an Operator works, is implemented and used. The following links provide additional information about Operators.
+In this workshop you learned a bit about how an Operator works, is implemented and used. The following links provide additional information about Operators.
 
 The original CoreOS web site on Operators can be found at:
 
