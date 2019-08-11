@@ -11,7 +11,7 @@ Now build the image using the `operator-sdk build` command. The image name we pr
 To start the build run:
 
 ```execute
-operator-sdk build --image-builder buildah %image_registry%/%project_namespace%/podset-operator
+operator-sdk build --image-builder buildah %image_registry%/%project_namespace%/podset-operator:0.1.0
 ```
 
 <span class="fas fa-exclamation-circle"></span> This will take a while the first time it is run because it needs to compile all the Go code which makes up the operator and the packages it uses.
@@ -31,7 +31,7 @@ podman login -u default -p `oc whoami -t` %image_registry%
 Now push the image to the registry:
 
 ```execute
-podman push %image_registry%/%project_namespace%/podset-operator
+podman push %image_registry%/%project_namespace%/podset-operator:0.1.0
 ```
 
 Verify that the image has been uploaded by querying the image stream:

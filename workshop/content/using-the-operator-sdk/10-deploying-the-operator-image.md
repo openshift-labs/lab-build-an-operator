@@ -13,7 +13,7 @@ image: REPLACE_IMAGE
 We need to update `REPLACE_IMAGE`, changing it to reference the image from the internal image registry where we pushed it. To change this, run:
 
 ```execute
-sed -i.bak -e "s#REPLACE_IMAGE#%image_registry%/%project_namespace%/podset-operator:latest#" deploy/operator.yaml
+sed -i.bak -e "s#REPLACE_IMAGE#%image_registry%/%project_namespace%/podset-operator:0.1.0#" deploy/operator.yaml
 ```
 
 Before we create this resource, we first need to create the service account which the deployment has been set up to run as:
