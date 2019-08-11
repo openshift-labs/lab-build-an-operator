@@ -1,14 +1,12 @@
 To see what operators may already have been installed into a cluster and which are available for you to use in your project, you can view them by visiting "Installed Operators" in the web console.
 
-If the web console is not already visible, click on the "Console" tab in the workshop environment to bring up the web console in place of the terminal. You should be presented with the list of projects you have access to.
+Right now you should be on the list of projects you have access to.
 
 ![](project-list.png)
 
-If the workshop is being run in a way that you have cluster admin access, you will see all projects in the cluster, and not just the project created for this workshop session.
+When accessing the web console as a cluster admin, you will see all projects in the cluster, and not just the project created for this workshop session.
 
-If you don't see the list of projects, click on "Home->Projects" in the left hand menu of the web console. If the left hand menu is not visible, you can expose it by clicking on the hamburger menu on the left side of the web console banner. Alternatively click on this [projects](%console_url%/k8s/cluster/projects)&nbsp;<span class="fas fa-window-restore"></span> link.
-
-With the list of projects visible, it is important to click on the name of your project so that the web console uses it as the context for subsequent steps. If the project list includes all projects in the cluster, copy:
+With the list of projects visible, it is important to click on the name of the project provided to you for this workshop, so that the web console uses it as the context for subsequent steps. If the project list includes all projects in the cluster, copy the project name:
 
 ```copy
 %project_namespace%

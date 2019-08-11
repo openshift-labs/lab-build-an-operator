@@ -4,11 +4,11 @@ The original CoreOS web site on Operators can be found at:
 
 * https://coreos.com/operators/
 
-The Operator Framework project and the repositories for it component parts can be found at:
+The Operator Framework project and the repositories for it's component parts can be found at:
 
 * https://github.com/operator-framework
 
-Including the key repositories for:
+This includes the key repositories for:
 
 * [Operator SDK](https://github.com/operator-framework/operator-sdk)
 * [Operator Lifecycle Manager (OLM)](https://github.com/operator-framework/operator-lifecycle-manager)

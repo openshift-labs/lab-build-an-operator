@@ -1,4 +1,4 @@
-To delete the cluster, from the details page for the `etcd` cluster called `example`, select "Delete Etcd Cluster" from the "Actions" drop down menu.
+To delete the cluster, on the details page for the `etcd` cluster called `example`, select "Delete Etcd Cluster" from the "Actions" drop down menu.
 
 ![](delete-etcd-cluster-from-details.png)
 

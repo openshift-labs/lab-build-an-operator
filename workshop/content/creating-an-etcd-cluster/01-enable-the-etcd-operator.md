@@ -28,7 +28,7 @@ On this page, ensure that the "Installation mode" is set to "All namespaces on t
 
 ![](etcd-operator-subscription.png)
 
-When the operators are correct, click on "Subscribe". On the next page, wait until the page is updated to show "1 installed".
+When the options are correct, click on "Subscribe". On the next page, wait until the page is updated to show "1 installed".
 
 ![](etcd-operator-subscription-installed.png)
 
