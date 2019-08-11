@@ -1,21 +1,29 @@
 Lab - Build an Operator
 =======================
 
-This is a workshop demonstrating the use of a pre-installed operator, as well as the process for creating, building and deploying your own operator.
+This is a workshop on enabling operators through OperatorHub, as well as the process for creating, building and testing your own operator.
 
 WARNING WARNING WARNING
 -----------------------
 
-This workshop uses ``podman`` inside of a container in the OpenShift cluster. Currently this requires that it be run as `root` and inside of a `privileged` container. There is a risk that anyone doing the workshop could take advantage of this and break out of the container or affect the underlying nodes.
+This workshop grants the user cluster admin access. It also uses ``buildah`` inside of a container in the OpenShift cluster to build images. Using ``buildah`` in a container currently requires that it be run as ``root`` and inside of a ``privileged`` container.
 
-Further, to allow the deployment of the operator, permissions have been granted to allow a user to be able to create custom resource definitions without being a full cluster admin.
-
-Because of this elevated access rights, only use this workshop on an expendable cluster which is going to be destroyed when the workshop is finished.
+Because of the elevated access rights, only use this workshop on an expendable cluster which is going to be destroyed when the workshop is finished.
 
 Deploying the Workshop
 ----------------------
 
-To deploy the workshop, first clone this Git repository to your own machine.
+To deploy the workshop, first clone this Git repository to your own machine. Use the command:
+
+```
+git clone --recurse-submodules https://github.com/openshift-labs/lab-build-an-operator.git
+```
+
+The ``--recurse-submodules`` option ensures that Git submodules are checked out. If you forget to use this option, after having clone the repository, run:
+
+```
+git submodule update --recursive --remote
+```
 
 Next create a project in OpenShift into which the workshop is to be deployed.
 
@@ -40,9 +48,9 @@ oc get route lab-build-an-operator
 Building the Workshop
 ---------------------
 
-The deployment created above will use an image for an empty workshop.
+The deployment created above will use an image from ``quay.io`` for this workshop based on the ``master`` branch of the repository.
 
-To deploy this workshop content, or make changes to the workshop content and test them, edit the files in the Git repository and then run:
+To make changes to the workshop content and test them, edit the files in the Git repository and then run:
 
 ```
 ./.workshop/scripts/build-workshop.sh
