@@ -1,5 +1,6 @@
 The operator will watch for any instances of the `PodSet` custom resource. Let's update the original sample resource file for `PodSet` which was created for us to have the `spec.replicas` attribute which the operator implements. Run:
 
+```execute
 cat > deploy/crds/app_v1alpha1_podset_cr.yaml << EOF
 apiVersion: app.example.com/v1alpha1
 kind: PodSet
@@ -8,6 +9,7 @@ metadata:
 spec:
   replicas: 3
 EOF
+```
 
 Now create an instance of the custom resource from this resource file:
 
@@ -69,7 +71,7 @@ kubectl patch podset/example-podset --type='json' -p '[{"op": "replace", "path":
 
 Two of the pods should be terminated, leaving just one.
 
-Stop watch for the pods.
+Stop the watch for the pods.
 
 ```execute-2
 <ctrl-c>
