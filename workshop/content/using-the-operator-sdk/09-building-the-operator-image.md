@@ -1,0 +1,41 @@
+Instead of running the operator locally and testing it against the cluster, we will build a container image for the operator, push the image to the internal image registry of the cluster, and then create a deployment for it.
+
+Before building the image for the operator, we first need to ensure that vendor packages are available and up to date. Run:
+
+```execute
+go mod vendor
+```
+
+Now build the image using the `operator-sdk build` command. The image name we provide here is what the final name for the image will be when pushed to the internal image registry. We will be using `buildah` to build the image.
+
+To start the build run:
+
+```execute
+operator-sdk build --image-builder buildah %image_registry%/%project_namespace%/podset-operator
+```
+
+<span class="fas fa-exclamation-circle"></span> This will take a while the first time it is run because it needs to compile all the Go code which makes up the operator and the packages it uses.
+
+Once the build completes, to see that the container image has been created, run:
+
+```execute
+podman images
+```
+
+To push the image to the internal image registry, you first need to login to the registry.
+
+```execute
+podman login -u default -p `oc whoami -t` %image_registry%
+```
+
+Now push the image to the registry:
+
+```execute
+podman push %image_registry%/%project_namespace%/podset-operator
+```
+
+Verify that the image has been uploaded by querying the image stream:
+
+```execute
+oc get is/podset-operator
+```

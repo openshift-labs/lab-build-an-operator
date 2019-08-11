@@ -18,4 +18,9 @@ modules:
     - using-the-operator-sdk/04-adding-custom-attributes
     - using-the-operator-sdk/05-load-crd-into-the-cluster
     - using-the-operator-sdk/06-adding-the-controller-code
+    - using-the-operator-sdk/07-define-the-reconcile-function
+    - using-the-operator-sdk/08-local-testing-of-the-operator
+    - using-the-operator-sdk/09-building-the-operator-image
+    - using-the-operator-sdk/10-deploying-the-operator-image
+    - using-the-operator-sdk/11-testing-the-deployed-operator
     - workshop-summary
