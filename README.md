@@ -60,7 +60,13 @@ To make changes to the workshop content and test them, edit the files in the Git
 
 This will replace the existing image used by the active deployment.
 
-If you are running an existing instance of the workshop, from your web browser select "Restart Workshop" from the menu top right of the workshop environment dashboard.
+If you are running an existing instance of the workshop, if you want to start over with a fresh project, first delete the project used for the session.
+
+```
+oc delete project $PROJECT_NAMESPACE
+```
+
+Then select "Restart Workshop" from the menu top right of the workshop environment dashboard.
 
 When you are happy with your changes, push them back to the remote Git repository.
 
