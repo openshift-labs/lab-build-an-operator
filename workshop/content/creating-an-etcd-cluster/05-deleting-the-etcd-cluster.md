@@ -6,7 +6,7 @@ You can alternatively delete it from kebab menu when viewing the list of `etcd` 
 
 ![](delete-etcd-cluster-from-list.png)
 
-Select one of these now and delete the `etcd` cluster called `example`. You will be prompted to confirm that you want to delete the `etcd` cluster. Click on `Delete`.
+Select one of these now and delete the `etcd` cluster called `example`. You will be prompted to confirm that you want to delete the `etcd` cluster. Click on "Delete".
 
 You should be returned to the list of `etcd` clusters, which should now be empty.
 

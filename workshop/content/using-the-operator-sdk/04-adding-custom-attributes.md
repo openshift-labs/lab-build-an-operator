@@ -35,7 +35,7 @@ type PodSetSpec struct {
 ```
 
 
-To track the names of the pods corresponding to those instances, we also add a `podNames` attribute to the `status` portion of the custom resource. The `status` portion is where the operator keeps any attributes it needs to track the status of the deployment based on the custom resource.
+To record the names of the pods corresponding to those instances, we also add a `podNames` attribute to the `status` portion of the custom resource. The `status` portion is where the operator keeps any attributes to report the status of the deployment based on the custom resource.
 
 ```
 type PodSetStatus struct {
