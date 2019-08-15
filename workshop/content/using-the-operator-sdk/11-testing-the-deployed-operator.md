@@ -14,7 +14,7 @@ EOF
 Now create an instance of the custom resource from this resource file:
 
 ```execute
-kubectl apply -f deploy/crds/app_v1alpha1_podset_cr.yaml
+oc apply -f deploy/crds/app_v1alpha1_podset_cr.yaml
 ```
 
 You should the operator logs updated as it responds to the custom resource, creates the corresponding pods, and then update the custom resource status with the list of pods.
@@ -22,13 +22,13 @@ You should the operator logs updated as it responds to the custom resource, crea
 To see the list of pods created corresponding to the custom resource, run:
 
 ```execute
-kubectl get pods -l app=example-podset
+oc get pods -l app=example-podset
 ```
 
 Now verify that these are the pod names recorded in the status of the custom resource:
 
 ```execute
-kubectl get podset/example-podset -o yaml
+oc get podset/example-podset -o yaml
 ```
 
 Stop the tailing of the log file.
@@ -40,19 +40,19 @@ Stop the tailing of the log file.
 Instead, run a watch on the pods:
 
 ```execute-2
-watch kubectl get pods -l app=example-podset
+watch oc get pods -l app=example-podset
 ```
 
 Grab the name of one of the running pods:
 
 ```execute
-POD=`kubectl get pods -l app=example-podset --field-selector=status.phase=Running -o name | head -1 -`; echo $POD
+POD=`oc get pods -l app=example-podset --field-selector=status.phase=Running -o name | head -1 -`; echo $POD
 ```
 
 Delete the pod:
 
 ```execute
-kubectl delete $POD
+oc delete $POD
 ```
 
 You should see from the watch that the pod starts terminating and at the same time is replaced. Because the pod is running `sleep` within `busybox`, and doesn't respond correctly to signals, it will take a little while before it completely disappears.
@@ -60,13 +60,13 @@ You should see from the watch that the pod starts terminating and at the same ti
 Check the status of the custom resource to verify the list of current pods has been updated:
 
 ```execute
-kubectl get podset/example-podset -o yaml
+oc get podset/example-podset -o yaml
 ```
 
 Next confirm that the operator handles scaling the number of pods correctly, by changing the number of replicas. We will scale it down to one replica.
 
 ```execute
-kubectl patch podset/example-podset --type='json' -p '[{"op": "replace", "path": "/spec/replicas", "value":1}]'
+oc patch podset/example-podset --type='json' -p '[{"op": "replace", "path": "/spec/replicas", "value":1}]'
 ```
 
 Two of the pods should be terminated, leaving just one.
