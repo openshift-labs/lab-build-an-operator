@@ -55,7 +55,7 @@ After making any changes to the Go code files containing the custom resource def
 operator-sdk generate k8s
 ```
 
-This will re-generate certain code files which depend on the definition of the custom resource.
+This will re-generate code files which depend on the definition of the custom resource.
 
 Also run:
 
