@@ -12,7 +12,7 @@ The first step you need to do in creating your operator is to generate the initi
 operator-sdk new podset-operator --type=go --skip-git-init
 ```
 
-We are using the project directory `podset-operator` to generate the project. Change to that directory as subsequent steps must be run from that directory.
+We are using the directory `podset-operator` as the project directory. Change to that directory as subsequent steps must be run from that directory.
 
 ```execute
 cd podset-operator
@@ -30,7 +30,7 @@ The purposes of the directories are as follows.
 
 `pkg/apis` - The directory tree containing the files that specify the APIs of the Custom Resources. For each custom resource (`kind`), it is necessary to edit the `pkg/apis/<group>/<version>/<kind>_types.go` file to define the API. These will be imported into their respective controllers to watch for changes in these resource types.
 
-`pkg/controller` - Contains the implementation of the controllers. For each custom resource, is it necessary to edit the `pkg/controller/<kind>/<kind>_controller.go` file to define the controller's reconciliation logic for handling that resource type.
+`pkg/controller` - Contains the implementation of the controllers. For each custom resource, it is necessary to edit the `pkg/controller/<kind>/<kind>_controller.go` file to define the controller's reconciliation logic for handling that resource type.
 
 `build` - Contains the `Dockerfile` and build scripts used to build the operator.
 
@@ -40,4 +40,6 @@ The purposes of the directories are as follows.
 
 Note that when generating the scaffolding for an operator, you can specify whether the operator should be configured so as to only monitor a single namespace, or all namespaces in a cluster.
 
-In this example operator, the default of monitoring a single namespace only will be used. If you needed to implement an operator which can monitor all namespaces, you can supply the `--cluster-scoped` option to `operator-sdk new` when run.
+In this example operator, the default of monitoring a single namespace only will be used. Such an operator would usually need be installed separately into each namespace that needs monitoring.
+
+If you need to implement an operator which can be installed once, and monitor all namespaces, you can supply the `--cluster-scoped` option to `operator-sdk new` when run. An operator that needs to be able to monitor all namespaces may need more complicated logic to track resources it manages.

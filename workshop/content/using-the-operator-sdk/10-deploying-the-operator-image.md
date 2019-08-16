@@ -40,13 +40,17 @@ Finally we can create the deployment:
 oc apply -f deploy/operator.yaml
 ```
 
-To see that the pod for the operator is running, you can use:
+To monitor that the pod for the operator has started up run:
 
 ```execute
-oc get pods -l name=podset-operator
+watch oc get pods -l name=podset-operator
 ```
 
-Keep running this command until the status has transitioned to "Running".
+When the status has transitioned to "Running", stop the watch.
+
+```execute
+<ctrl-c>
+```
 
 So we can monitor what the operator is doing as we test it, grab the name of the pod:
 
