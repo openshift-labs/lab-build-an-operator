@@ -42,4 +42,4 @@ Note that when generating the scaffolding for an operator, you can specify wheth
 
 In this example operator, the default of monitoring a single namespace only will be used. Such an operator would usually need be installed separately into each namespace that needs monitoring.
 
-If you need to implement an operator which can be installed once, and monitor all namespaces, you can supply the `--cluster-scoped` option to `operator-sdk new` when run. An operator that needs to be able to monitor all namespaces may need more complicated logic to track resources it manages.
+If you need to implement an operator which can be installed once, and monitor all namespaces, you can supply the `--cluster-scoped` option to `operator-sdk new` when run.
