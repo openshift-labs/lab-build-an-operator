@@ -17,7 +17,7 @@ Now create an instance of the custom resource from this resource file:
 oc apply -f deploy/crds/app_v1alpha1_podset_cr.yaml
 ```
 
-You should the operator logs updated as it responds to the custom resource, creates the corresponding pods, and then update the custom resource status with the list of pods.
+You should see the operator logs update as it responds to the custom resource, creates the corresponding pods, and then update the custom resource status with the list of pods.
 
 To see the list of pods created corresponding to the custom resource, run:
 
