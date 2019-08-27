@@ -63,7 +63,7 @@ Also run:
 operator-sdk generate openapi
 ```
 
-This will re-generate the CRD file, updating the OpenAPI schema definition which describes the attributes. The schema is used for validating that a custom resource when created is valid, and is also used when running `oc explain` on a custom resource type to generate information about it.
+This will re-generate the CRD file, updating the OpenAPI schema definition which describes the attributes. The schema is used to validate that a custom resource is valid. It is also consulted when `oc explain` is run on a custom resource type to generate information about it.
 
 For more information on the schema, see the Kubernetes documentation on [specifying a structural schema](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/#specifying-a-structural-schema).
 
