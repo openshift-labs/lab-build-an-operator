@@ -8,7 +8,7 @@ You can browse through the YAML definition of the `clusterserviceversion` for th
 
 At this point, double check that the web console shows you as being in the `%project_namespace%` project, and not some other project. The name of the project is displayed on a project drop down menu just below the top banner of the web console. Select the correct project from the drop down menu if necessary.
 
-To create a new `etcd` cluster from this page in your project, now click on "Create New" of the "etcd Cluster" card under "Provided APIs". You can also get there by clicking on the "etcd Cluster" tab and then clicking on the "Create etcd Cluster" button.
+To create a new `etcd` cluster from this page in your project, find the "etcd Cluster" card under "Provided APIs". Click on "Create New" of this card. You can also get there by clicking on the "etcd Cluster" tab and then clicking on the "Create etcd Cluster" button.
 
 This will bring up an editor on a pre-filled YAML definition for a custom resource, which when created, will in turn trigger the creation of the `etcd` cluster.
 

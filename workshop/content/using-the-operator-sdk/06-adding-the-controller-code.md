@@ -27,7 +27,7 @@ In the case of an existing instance of the custom resource being updated, and th
 
 If the custom resource is deleted, then all the pods need to be deleted.
 
-In addition to the operator watching for changes to the custom resource, it also needs to monitor the pods corresponding to each instance of the custom resource. This is so that if a pod is shutdown, or was deleted, that a new pod is started in its place. In order to do this, the operator code also needs to watch instances of a `Pod`. This is also setup in the `add()` function.
+In addition to the operator watching for changes to the custom resource, it also needs to monitor the pods corresponding to each instance of the custom resource. This is so that if a pod is shutdown, or deleted, that a new pod can be started in its place. In order to do this, the operator code also needs to watch instances of a `Pod`. This is also setup in the `add()` function.
 
 ```
 // TODO(user): Modify this to be the types you create that are owned by the primary resource
