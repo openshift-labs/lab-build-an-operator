@@ -17,6 +17,7 @@ RUN chown root:root /etc/sudoers.d/* && \
 ENV TERMINAL_TAB=split
 
 ENV GO111MODULE=on
+ENV GOPROXY=https://proxy.golang.org
 
 USER 1001
 
