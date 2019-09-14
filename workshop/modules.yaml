@@ -1,5 +1,7 @@
-modules:
+config:
+    google_tracking_id: UA-135921114-7
 
+modules:
     workshop-overview:
         name: Workshop Overview
         exit_sign: Verify Environment
