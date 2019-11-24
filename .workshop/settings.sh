@@ -1,7 +1,7 @@
 WORKSHOP_NAME=lab-build-an-operator
 WORKSHOP_TITLE="Build an Operator"
 WORKSHOP_DESCRIPTION="Workshop on Operators and the Operator SDK"
-WORKSHOP_IMAGE=quay.io/openshiftlabs/lab-build-an-operator:master
+WORKSHOP_IMAGE=quay.io/openshiftlabs/lab-build-an-operator:1.0
 SPAWNER_ROLE=cluster-admin
 SPAWNER_PASSWORD=openshift
 WORKSHOP_MEMORY=2Gi
