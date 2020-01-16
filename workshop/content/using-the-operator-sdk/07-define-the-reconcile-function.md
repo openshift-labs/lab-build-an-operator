@@ -1,6 +1,6 @@
-The `Reconcile()` function is what needs to perform state reconciliation for your operator. That is, ensure that the current state of resources created by the operator, match what the custom resource has specified they need to be.
+The `Reconcile()` function is what performs resource state reconciliation for your Operator. That is, ensure that the current state of resources created by the Operator match what the custom resource has specified they need to be.
 
-For our operator, as previously described, we need to update the operator code to handle a set of pods, the number of which is dictated by `spec.replicas`.
+For our Operator, as previously described, we need to update the Operator code to handle a set of pods, the number of which is dictated by `spec.replicas`.
 
 To apply the required changes, run:
 

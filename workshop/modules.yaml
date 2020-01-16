@@ -31,7 +31,7 @@ modules:
     using-the-operator-sdk/04-adding-custom-attributes:
         name: Adding Custom Attributes
     using-the-operator-sdk/05-load-crd-into-the-cluster:
-        name: Load CRD into the Cluster
+        name: Load the CRD into the Cluster
     using-the-operator-sdk/06-adding-the-controller-code:
         name: Adding the Controller Code
     using-the-operator-sdk/07-define-the-reconcile-function:

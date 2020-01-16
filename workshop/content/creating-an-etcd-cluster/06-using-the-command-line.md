@@ -1,6 +1,6 @@
 Up till this point we have done everything using the web console. Operators being a direct extension to Kubernetes, they can also be used from the command line. This can be done using either the `kubectl` or `oc` command line clients. In this workshop we will use `oc`.
 
-To create an `etcd` cluster from the command line you first need the YAML resource definition for the `EtcdCluster` resource. To generate the YAML file with the definition, run:
+To create an etcd cluster from the command line you first need the YAML resource definition for the `EtcdCluster` resource. To generate the YAML file with the definition, run:
 
 ```execute
 cat > example-cluster.yaml << EOF
@@ -74,13 +74,13 @@ No resources found.
 
 As you can see, there aren't any instances of the resource types used with traditional application deployments, for managing a set of pods, and ensuring they are kept running.
 
-This is because it is the `etcd` operator itself which is directly managing the creation of the pods, and replacing them if they terminate unexpectedly. The operator is therefore acting as a controller, in much the same way as occurs for `replicationcontroller`, `replicaset`, `statefulset` or `daemonset`.
+This is because it is the etcd Operator itself which is directly managing the creation of the pods, and replacing them if they terminate unexpectedly. The operator is therefore acting as a controller, in much the same way as occurs for `ReplicationController`, `ReplicaSet`, `StatefulSet` or `DaemonSet`.
 
-The reason that the `etcd` operator manages the pods directly is that replacing a terminated pod isn't as simple as running a new one in its place. The operator needs to ensure that the new instance is correctly joined into the existing cluster, any state for the cluster copied to the new instance from an existing member, and a new leader election run.
+The reason that the etcd Operator manages the pods directly is that replacing a terminated pod isn't as simple as running a new one in its place. The Operator needs to ensure that the new instance is correctly joined into the existing cluster, any state for the cluster copied to the new instance from an existing member, and a new leader election run.
 
-It is the need for such special steps in managing the set of pods in the cluster, that the operator is fulfilling, and why `replicationcontroller`, `replicaset`, `statefulset` or `daemonset` cannot be used.
+It is the need for such special steps in managing the set of pods in the cluster, that the operator is fulfilling, and why `ReplicationController`, `ReplicaSet`, `StatefulSet` or `DaemonSet` cannot be used.
 
-To get a list of the resources that the `etcd` operator has created, run:
+To get a list of the resources that the etcd Operator has created, run:
 
 ```execute
 oc get all -l etcd_cluster=example -o name
@@ -88,9 +88,9 @@ oc get all -l etcd_cluster=example -o name
 
 You will see that the only extra resources it has created beyond the pods which it is managing directly are the service objects which allow the cluster to be accessed by applications wishing to use it.
 
-That the `etcd` operator manages the pods directly doesn't mean all operators need to manage everything themselves. An operator can still use the existing resource types for managing a set of pods. The `etcd` operator only does it because of the extra requirements it has of ensuring members of the cluster interact with each other in a particular way when a new pod is started up and needs to be joined to the cluster.
+That the etcd Operator manages the pods directly doesn't mean all Operators need to manage everything themselves. An Operator can still use the existing resource types for managing a set of pods. The etcd Operator only does it because of the extra requirements it has of ensuring members of the cluster interact with each other in a particular way when a new pod is started up and needs to be joined to the cluster.
 
-Either way, any changes you need to make to the managed set of resources would be done by making changes to the original custom resource. You would not make changes directly to the managed resources. In fact, changes made directly to the managed resources would often be reverted by the operator to ensure that what is deployed matches what the custom resource defines.
+Either way, any changes you need to make to the managed set of resources would be done by making changes to the original custom resource. You would not make changes directly to the managed resources. In fact, changes made directly to the managed resources would often be reverted by the Operator to ensure that what is deployed matches what the custom resource defines.
 
 For our current example, to modify from the command line the number of instance members in the cluster, you can patch the original custom resource.
 
@@ -102,7 +102,7 @@ This will reduce the number of instance members in the cluster from 3 down to 1.
 
 You could also use `oc edit` or other methods for updating in place the existing custom resource definition.
 
-We are done with the `etcd` cluster, so you can now delete the cluster, by deleting the custom resource.
+We are done with the etcd cluster, so you can now delete the cluster, by deleting the custom resource.
 
 ```execute
 oc delete etcdcluster/example

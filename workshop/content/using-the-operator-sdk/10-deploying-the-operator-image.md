@@ -1,10 +1,10 @@
-When you use the Operator SDK it will create the resource definitions for deploying the operator into the cluster. To view the deployment configuration which was generated, run:
+When you use the Operator SDK, it will create the resource definitions for deploying the Operator into the cluster. To view the deployment configuration that was generated, run:
 
 ```execute
 cat deploy/operator.yaml
 ```
 
-In this resource definition you will see that `spec.template.spec.containers.image` is set as:
+In this resource definition, you will see that `spec.template.spec.containers.image` is set as:
 
 ```
 image: REPLACE_IMAGE
@@ -34,7 +34,7 @@ Then bind the role to the service account:
 oc apply -f deploy/role_binding.yaml
 ```
 
-Finally we can create the deployment:
+Finally, we can create the deployment:
 
 ```execute
 oc apply -f deploy/operator.yaml
@@ -52,7 +52,7 @@ When the status has transitioned to "Running", stop the watch.
 <ctrl-c>
 ```
 
-So we can monitor what the operator is doing as we test it, grab the name of the pod:
+So we can monitor what the Operator is doing as we test it, grab the name of the pod:
 
 ```execute-2
 POD=`oc get pods -l name=podset-operator --field-selector=status.phase=Running -o name | head -1 -`; echo $POD

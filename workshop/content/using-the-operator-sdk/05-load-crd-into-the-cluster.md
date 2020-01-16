@@ -1,4 +1,4 @@
-Before you can start creating instances of your custom resource and run an operator which relies on it, you need to load the CRD for the custom resource into the cluster.
+Before you can start creating instances of your custom resource type and run an Operator which handles them, you need to load the CRD for the custom resource into the cluster.
 
 To load the CRD, run:
 
@@ -14,7 +14,7 @@ To verify that the CRD has been loaded run:
 oc describe crd/podsets.app.example.com
 ```
 
-This will display details about the custom resource described by the CRD. To perform queries against the schema, you can use `oc explain`.
+This will display details about the custom resource type defined by the CRD. To perform queries against the schema, you can use `oc explain`.
 
 To see the custom attributes added to the `spec` for the custom resource, run:
 
@@ -22,21 +22,21 @@ To see the custom attributes added to the `spec` for the custom resource, run:
 oc explain podset.spec
 ```
 
-At the moment no descriptions have been provided for the custom attributes, so only information about the type of the attributes will be shown.
+At the moment, no descriptions have been provided for the custom attributes, so only information about the type of the attributes will be shown.
 
-To check that you can now create instances of the `podset` resource, run:
+To check that you can now create instances of the `PodSet` resource, run:
 
 ```execute
 oc auth can-i create podset
 ```
 
-It should respond with `yes`.
+It should respond with "yes".
 
 This will work because you are a cluster admin in this workshop environment, and can create resources of any type.
 
-After the operator is deployed to a project namespace, if users who are not cluster admins need to be able to create instances of the new `podset` resource type, it will be necessary to create a cluster role which describes that right, and create a role binding against the users or group of users who need it.
+After the Operator is deployed to a project namespace, if users who are not cluster admins need to be able to create instances of the new `PodSet` resource type, it will be necessary to create a cluster role which describes that right, as well as a role binding against the users or group of users who need it.
 
-The cluster role for being able to work with the `podset` resource would be:
+The cluster role for being able to work with the `PodSet` resource would be:
 
 ```
 apiVersion: authorization.openshift.io/v1

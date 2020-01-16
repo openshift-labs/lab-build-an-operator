@@ -1,4 +1,4 @@
-The operator will watch for any instances of the `PodSet` custom resource. Let's update the original sample resource file for `PodSet` which was created for us to have the `spec.replicas` attribute which the operator implements. Run:
+The Operator will watch for any instances of the `PodSet` custom resource type. Let's update the original sample resource file for `PodSet` which was created for us to have the `spec.replicas` attribute which the Operator enforces. Run:
 
 ```execute
 cat > deploy/crds/app_v1alpha1_podset_cr.yaml << EOF
@@ -17,7 +17,7 @@ Now create an instance of the custom resource from this resource file:
 oc apply -f deploy/crds/app_v1alpha1_podset_cr.yaml
 ```
 
-You should see the operator logs update as it responds to the custom resource, creates the corresponding pods, and then update the custom resource status with the list of pods.
+You should see the Operator logs update as it responds to the custom resource, creating the corresponding pods, and then updating the custom resource status with the list of pods.
 
 To see the list of pods created corresponding to the custom resource, run:
 
@@ -55,7 +55,7 @@ Delete the pod:
 oc delete $POD
 ```
 
-You should see from the watch that the pod starts terminating and at the same time is replaced. Because the pod is running `sleep` within `busybox`, and doesn't respond correctly to signals, it will take a little while before it completely disappears.
+You should see from the watch that the pod starts terminating and is immediately replaced. Because the pod is running `sleep` within `busybox`, and doesn't respond correctly to signals, it will take a little while before it completely disappears.
 
 Check the status of the custom resource to verify the list of current pods has been updated:
 

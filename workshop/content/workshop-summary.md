@@ -1,4 +1,4 @@
-In this workshop you learned a bit about how an Operator works, is implemented and used. The following links provide additional information about Operators.
+In this workshop, you learned a bit about how an Operator works, is implemented, and used. The following links provide additional information about Operators.
 
 For further information on custom resources and controllers in Kubernetes, see:
 
@@ -8,7 +8,7 @@ The original CoreOS web site on Operators can be found at:
 
 * https://coreos.com/operators/
 
-The Operator Framework project and the repositories for it's component parts can be found at:
+The Operator Framework project and the repositories for its component parts can be found at:
 
 * https://github.com/operator-framework
 

@@ -1,4 +1,4 @@
-When you defined the name for your custom resource a Go code file was generated corresponding to the resource type. This code is used to specify what custom attributes your resource type will have. Initially the code file does not define any attributes.
+When you defined the name for your custom resource, a Go code file was generated corresponding to the resource type. This code is used to specify what custom attributes your resource type will have. Initially the code file does not define any attributes.
 
 To see the initial code file generated, and the structures it contains corresponding to the custom resource type, run:
 
@@ -35,7 +35,7 @@ type PodSetSpec struct {
 ```
 
 
-To record the names of the pods corresponding to those instances, we also add a `podNames` attribute to the `status` portion of the custom resource. The `status` portion is where the operator keeps any attributes to report the status of the deployment based on the custom resource.
+To record the names of the pods corresponding to those instances, we also add a `podNames` attribute to the `status` portion of the custom resource. The `status` portion is where the Operator keeps any attributes to report the status of the custom resource.
 
 ```
 type PodSetStatus struct {
