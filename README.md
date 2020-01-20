@@ -47,6 +47,10 @@ The name of the pod used to start the workshop will be ``lab-build-an-operator-s
 
 ### Deploying on Red Hat Product Demo System
 
+The workshop is found in the catalog under the *Workshops* folder and is named *OCP4 Workshop - Build an Operator*.
+
+Once the cluster is deployed, follow the directions in the next section to begin the workshop itself.
+
 ## Running the Workshop
 
 You can determine the hostname for the URL to access the workshop by running:
