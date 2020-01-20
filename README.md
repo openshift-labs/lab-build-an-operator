@@ -1,17 +1,14 @@
-Lab - Build an Operator
-=======================
+# Lab - Build an Operator
 
 This is a workshop on enabling operators through OperatorHub, as well as the process for creating, building and testing your own operator.
 
-WARNING WARNING WARNING
------------------------
+## Deploying the Workshop
 
-This workshop grants the user cluster admin access. It also uses ``buildah`` inside of a container in the OpenShift cluster to build images. Using ``buildah`` in a container currently requires that it be run as ``root`` and inside of a ``privileged`` container.
+**WARNING**
+>This workshop grants the user cluster admin access. It also uses ``buildah`` inside of a container in the OpenShift cluster to build images. Using ``buildah`` in a container currently requires that it be run as ``root`` and inside of a ``privileged`` container.
+>Because of the elevated access rights, only use this workshop on an expendable cluster which is going to be destroyed when the workshop is finished.
 
-Because of the elevated access rights, only use this workshop on an expendable cluster which is going to be destroyed when the workshop is finished.
-
-Deploying the Workshop
-----------------------
+### Deploying to a Cluster
 
 To deploy the workshop, first clone this Git repository to your own machine. Use the command:
 
@@ -28,7 +25,7 @@ git submodule update --recursive --remote
 Next create a project in OpenShift into which the workshop is to be deployed.
 
 ```
-oc new-project workshops
+oc new-project lab-operator
 ```
 
 From within the top level of the Git repository, now run:
@@ -37,18 +34,42 @@ From within the top level of the Git repository, now run:
 ./.workshop/scripts/deploy-spawner.sh
 ```
 
-The name of the deployment will be ``lab-build-an-operator``.
+The name of the pod used to start the workshop will be ``lab-build-an-operator-spawner``.
+
+### Deploying from Red Hat Product Demo System
+
+## Running the Workshop
 
 You can determine the hostname for the URL to access the workshop by running:
 
 ```
-oc get route lab-build-an-operator
+oc -n lab-operator get route lab-build-an-operator
 ```
 
 When the URL for the workshop is accessed you will be prompted for a user name and password. Use your email address or some other unique identifier for the user name. This is only used to ensure you get a unique session and can attach to the same session from a different browser or computer if need be. The password you must supply is ``openshift``.
 
-Building the Workshop
----------------------
+## Deleting the Workshop
+
+To delete the spawner and any active sessions, including projects, run:
+
+```
+./.workshop/scripts/delete-spawner.sh
+```
+
+To delete the build configuration for the workshop image, run:
+
+```
+./.workshop/scripts/delete-workshop.sh
+```
+
+To delete any global resources which may have been created, run:
+
+```
+./.workshop/scripts/delete-resources.sh
+```
+
+
+## Development
 
 The deployment created above will use an image from ``quay.io`` for this workshop based on the ``master`` branch of the repository.
 
@@ -85,24 +106,3 @@ Note that if you do this, you will need to re-run:
 ```
 
 to have any local content changes be used once again as it will revert back to using the image on ``quay.io``.
-
-Deleting the Workshop
----------------------
-
-To delete the spawner and any active sessions, including projects, run:
-
-```
-./.workshop/scripts/delete-spawner.sh
-```
-
-To delete the build configuration for the workshop image, run:
-
-```
-./.workshop/scripts/delete-workshop.sh
-```
-
-To delete any global resources which may have been created, run:
-
-```
-./.workshop/scripts/delete-resources.sh
-```
