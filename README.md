@@ -1,15 +1,23 @@
 # Lab - Build an Operator
 
+* [Deploying the Workshop](#deploying-the-workshop)
+  * [Deploying to a Cluster](#deploying-to-a-cluster)
+  * [Deploying on Red Hat Product Demo System](#deploying-on-red-hat-product-demo-system)
+* [Running the Workshop](#running-the-workshop)
+* [Deleting the Workshop](#deleting-the-workshop)
+* [Development](#development)
+
+
 This is a workshop on enabling operators through OperatorHub, as well as the process for creating, building and testing your own operator.
 
 ## Deploying the Workshop
 
+### Deploying to a Cluster
+
 **WARNING**
 >This workshop grants the user cluster admin access. It also uses ``buildah`` inside of a container in the OpenShift cluster to build images. Using ``buildah`` in a container currently requires that it be run as ``root`` and inside of a ``privileged`` container.
 >Because of the elevated access rights, only use this workshop on an expendable cluster which is going to be destroyed when the workshop is finished.
-
-### Deploying to a Cluster
-
+oc get route lab-build-an-operator
 To deploy the workshop, first clone this Git repository to your own machine. Use the command:
 
 ```
@@ -36,7 +44,7 @@ From within the top level of the Git repository, now run:
 
 The name of the pod used to start the workshop will be ``lab-build-an-operator-spawner``.
 
-### Deploying from Red Hat Product Demo System
+### Deploying on Red Hat Product Demo System
 
 ## Running the Workshop
 
