@@ -10,6 +10,14 @@
 
 ## Overview
 
+| | |
+--- | ---
+| Audience Experience Level | Intermediate |
+| Supported Number of Users | One per cluster [1] |
+| Average Time to Complete | 45 minutes |
+
+*[1] It is possible for multiple users to share a cluster, but they won't have the full experience. The etcd Operator is installed cluster-wide. The first user to reach that point will be able to deploy the Operator; any other students will see the Operator as deployed. Each student, however, will still be able to complete the steps for deploying their own etcd cluster.*
+
 This workshop covers two primary topics:
 
 * Installing an Operator through the OpenShift web interface and using it to deploy and configure an etcd cluster.
@@ -17,14 +25,6 @@ This workshop covers two primary topics:
   * Defining a new Custom Resource Definition (CRD) the Operator will manage
   * Generating the scaffold code, using the SDK, for an Operator in Go
   * Deploying the Operator and testing it through the creation of a custom resource
-
-| | |
---- | ---
-| Audience Experience Level | Intermediate |
-| Supported Number of Users | One per cluster [1] |
-| Average Time to Complete | 45 minutes |
-
-[1] It is possible for multiple users to share a cluster, but they won't have the full experience. The etcd Operator is installed cluster-wide. The first user to reach that point will be able to deploy the Operator; any other students will see the Operator as deployed. Each student, however, will still be able to complete the steps for deploying their own etcd cluster.
 
 ## Deploying the Workshop
 
@@ -63,7 +63,9 @@ The name of the pod used to start the workshop will be ``lab-build-an-operator-s
 
 ### Deploying on Red Hat Product Demo System
 
-The workshop is found in the catalog under the *Workshops* folder and is named *OCP4 Workshop - Build an Operator*.
+The workshop is found in the catalog under the *Workshops* folder and is named:
+
+**OCP4 Workshop - Build an Operator**
 
 Once the cluster is deployed, follow the directions in the next section to begin the workshop itself.
 
@@ -104,6 +106,8 @@ By default, users are presented with the terminal, which contains (among other t
 
 ## Deleting the Workshop
 
+If the workshop was deployed manually from the git repository, you can use the provided scripts to remove the workshop artifacts from the cluster.
+
 To delete the spawner and any active sessions, including projects, run:
 
 ```
@@ -122,12 +126,11 @@ To delete any global resources which may have been created, run:
 ./.workshop/scripts/delete-resources.sh
 ```
 
-
 ## Development
 
-The deployment created above will use an image from ``quay.io`` for this workshop based on the ``master`` branch of the repository.
+When deploying manually from the git repository, the scripts use an image from ``quay.io`` for this workshop based on the ``master`` branch of the repository.
 
-To make changes to the workshop content and test them, edit the files in the Git repository and then run:
+To make changes to the workshop content and test them, edit the files in the git repository and then run:
 
 ```
 ./.workshop/scripts/build-workshop.sh
