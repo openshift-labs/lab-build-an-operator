@@ -1,18 +1,34 @@
 # Lab - Build an Operator
 
+* [Overview](#overview)
 * [Deploying the Workshop](#deploying-the-workshop)
-  * [Deploying to a Cluster](#deploying-to-a-cluster)
+  * [Deploying to OpenShift](#deploying-to-openshift)
   * [Deploying on Red Hat Product Demo System](#deploying-on-red-hat-product-demo-system)
 * [Running the Workshop](#running-the-workshop)
 * [Deleting the Workshop](#deleting-the-workshop)
 * [Development](#development)
 
+## Overview
 
-This is a workshop on enabling operators through OperatorHub, as well as the process for creating, building and testing your own operator.
+This workshop covers two primary topics:
+
+* Installing an Operator through the OpenShift web interface and using it to deploy and configure an etcd cluster.
+* Creating a new Operator using the Operator SDK, including:
+  * Defining a new Custom Resource Definition (CRD) the Operator will manage
+  * Generating the scaffold code, using the SDK, for an Operator in Go
+  * Deploying the Operator and testing it through the creation of a custom resource
+
+| | |
+--- | ---
+| Audience Experience Level | Intermediate |
+| Supported Number of Users | One per cluster [1] |
+| Average Time to Complete | 45 minutes |
+
+[1] It is possible for multiple users to share a cluster, but they won't have the full experience. The etcd Operator is installed cluster-wide. The first user to reach that point will be able to deploy the Operator; any other students will see the Operator as deployed. Each student, however, will still be able to complete the steps for deploying their own etcd cluster.
 
 ## Deploying the Workshop
 
-### Deploying to a Cluster
+### Deploying to OpenShift
 
 **WARNING**
 >This workshop grants the user cluster admin access. It also uses ``buildah`` inside of a container in the OpenShift cluster to build images. Using ``buildah`` in a container currently requires that it be run as ``root`` and inside of a ``privileged`` container.
