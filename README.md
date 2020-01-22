@@ -72,10 +72,35 @@ Once the cluster is deployed, follow the directions in the next section to begin
 You can determine the hostname for the URL to access the workshop by running:
 
 ```
-oc -n lab-operator get route lab-build-an-operator
+oc -n lab-operator get route lab-build-an-operator-spawner
 ```
 
-When the URL for the workshop is accessed you will be prompted for a user name and password. Use your email address or some other unique identifier for the user name. This is only used to ensure you get a unique session and can attach to the same session from a different browser or computer if need be. The password you must supply is ``openshift``.
+When first accessing the workshop URL, the user may be presented with a warning about a potential security risk. This is due to the workshop using a self-signed certificate and users should be instructed to elect to continue to the site.
+
+That URL leads to a login for the workshop itself.
+
+![Workshop Login](/docs/jupyter-login.png)
+
+Users will enter the following information:
+
+| Key | Value |
+| --- | ----- |
+| Username | The user's e-mail address. This address is not saved anywhere outside of the workshop itself; it will not be used to follow up with the user. It simply acts as a unique identifier for the workshop instance. Logging into the site with a new username will cause a new instance of the workshop to be created (on the same cluster, however, so previously run cluster-wide operations will still be in effect. |
+| Password | ``openshift`` |
+
+After logging in, the workshop takes a few seconds to start:
+
+![Workshop Startup](/docs/starting-up.png)
+
+Once the workshop begins, users are presented with a two panel interface:
+
+![Workshop Terminal](/docs/workshop-terminal.png)
+
+On the left are the instructions users will follow for the workshop. The workshop itself explains how to use the interface, but generally speaking users will follow the directions on the left, with navigation buttons appearing at the end of each section. Text that is highlighted with a yellow background may be clicked to have the operation automatically executed in the cluster on the right.
+
+By default, users are presented with the terminal, which contains (among other things) an authenticated ``oc`` client. The ``Console`` tab on the right can be clicked to open the OpenShift web console. Again, the user will already be authenticated; if a workshop requires users to change their logged in OpenShift user, the workshop instructions will specifically mention that.
+
+![Workshop Console](/docs/workshop-console.png)
 
 ## Deleting the Workshop
 
