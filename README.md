@@ -33,7 +33,6 @@ This workshop covers two primary topics:
 **WARNING**
 >This workshop grants the user cluster admin access. It also uses ``buildah`` inside of a container in the OpenShift cluster to build images. Using ``buildah`` in a container currently requires that it be run as ``root`` and inside of a ``privileged`` container.
 >Because of the elevated access rights, only use this workshop on an expendable cluster which is going to be destroyed when the workshop is finished.
-oc get route lab-build-an-operator
 
 To deploy the workshop, first clone this Git repository to your own machine. Use the command:
 
